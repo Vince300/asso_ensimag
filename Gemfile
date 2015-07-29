@@ -38,6 +38,13 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Slim templating
+gem 'slim-rails'
+
+# i18n
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
+gem 'devise-i18n'
+
 gem 'bundler'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
