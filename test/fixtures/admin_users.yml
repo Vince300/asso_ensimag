@@ -1,0 +1,3 @@
+admin:
+  email: admin@asso-ensimag.fr
+  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>

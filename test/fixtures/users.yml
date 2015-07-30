@@ -1,0 +1,36 @@
+cercle:
+  username: Cercle
+  email: cercle@asso-ensimag.fr
+  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+bds:
+  username: BDS
+  email: bds@asso-ensimag.fr
+  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+bda:
+  username: BDA
+  email: bda@asso-ensimag.fr
+  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+je:
+  username: JE
+  email: je@asso-ensimag.fr
+  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+polecom:
+  username: Pôle com'
+  email: polecom@asso-ensimag.fr
+  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+polegala:
+  username: Pôle gala
+  email: polegala@asso-ensimag.fr
+  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+gaming:
+  username: Ensimag gaming
+  email: gaming@asso-ensimag.fr
+  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+engine:
+  username: Club Engine
+  email: engine@asso-ensimag.fr
+  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+securimag:
+  username: SecurIMAG
+  email: securimag@asso-ensimag.fr
+  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>

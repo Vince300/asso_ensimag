@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729221810) do
+ActiveRecord::Schema.define(version: 20150730222400) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 20150729221810) do
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
     t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
@@ -51,7 +50,6 @@ ActiveRecord::Schema.define(version: 20150729221810) do
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
     t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
