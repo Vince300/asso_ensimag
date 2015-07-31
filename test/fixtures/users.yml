@@ -4,10 +4,26 @@ cercle:
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
   slug: cercle
   order: 0
+  site_url: http://ensimag-b.de/
+  facebook_url: https://www.facebook.com/cercle.imag
   description: |
     Le Cercle des Élèves Ensimag est ce qu’on appelle ailleurs le BDE, le Bureau des Élèves.
 
     C’est une association à but non lucratif (loi 1901) qui a pour objectif d’animer la vie de l’école en organisant divers événements tout au long de l’année, comme des repas, des soirées… Le Cercle est aussi là pour te proposer des bons plans, et te concocter une intégration de folie où tu pourras rencontrer les gens de ta promo et te forger de belles amitiés.
+
+    ## Les membres
+    Tous les étudiants inscrits à l’Ensimag sont membres du Cercle des Élèves, mais seuls certains font partie du Conseil d’Administration : ce sont ceux qui staffent en soirée et portent des pulls/polos/t-shirts à l’effigie du Cercle !
+
+    ### Le Bureau
+    * Nicolas : Président
+    * Romain : Vice-président
+    * Thomas : Vice-président
+    * Aymeric : Trésorier
+    * Salah : Vice-trésorier
+    * Gaëtan : Secrétaire
+
+    ### Contacter le Cercle
+    Tu peux contacter le Cercle sur Facebook (compte [https://www.facebook.com/cercle.imag](Cercle Ensimag)) !
 bds:
   username: BDS
   email: bds@asso-ensimag.fr
