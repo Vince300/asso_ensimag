@@ -33,9 +33,9 @@
       var editor = new EpicEditor({
         container: dv,
         theme: {
-          base: '/assets/base/epiceditor.css',
-          preview: '/assets/epiceditor/preview.css',
-          editor: '/assets/epiceditor/editor.css'
+          base: '<%= asset_path("base/epiceditor.css") %>',
+          preview: '<%= asset_path("epiceditor/preview.css") %>',
+          editor: '<%= asset_path("epiceditor/editor.css") %>'
         }
       });
       editor.load();
