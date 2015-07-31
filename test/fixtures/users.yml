@@ -2,35 +2,81 @@ cercle:
   username: Cercle
   email: cercle@asso-ensimag.fr
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  slug: cercle
+  order: 0
+  description: |
+    Le Cercle des Élèves Ensimag est ce qu’on appelle ailleurs le BDE, le Bureau des Élèves.
+
+    C’est une association à but non lucratif (loi 1901) qui a pour objectif d’animer la vie de l’école en organisant divers événements tout au long de l’année, comme des repas, des soirées… Le Cercle est aussi là pour te proposer des bons plans, et te concocter une intégration de folie où tu pourras rencontrer les gens de ta promo et te forger de belles amitiés.
 bds:
   username: BDS
   email: bds@asso-ensimag.fr
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  slug: bds
+  order: 1
+  description: |
+    Le BDS est l’asso qui se charge de te faire bouger pendant ton séjour à l’Imag ! Ils proposent des événements sportifs dont le fameux Week-End Ski (WES).
+
+    Si tu ne les as pas remarqués pendant l’inté, c’est eux qui ont mis le feu à l’amphi de rentrée et qui trouvent des slogans rassembleurs pour faire la promo de leurs événements ! Ils sont nombreux, portent des vêtements verts foncés avec le logo BDS, et savent mettre l’ambiance en soirée :)
 bda:
   username: BDA
   email: bda@asso-ensimag.fr
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  slug: bda
+  order: 2
+  description: |
+    L’association qui cherche à faire ressortir l’artiste qui est en toi ! Leurs événements sont (logiquement) axés art et culture, comme le Global Village où les participants ramènent des spécialités culinaires de chez eux pour les partager.
+
+    Tu les reconnaîtras facilement à leurs vêtements verts foncés arborant leur logo, et c’est eux que tu verras souvent peindre des décorations pour les différentes soirées de l’année, parler cinéma, peinture ou musique, ou inviter le club de bière à leurs soirées pour étancher ta soif…
 je:
   username: JE
   email: je@asso-ensimag.fr
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  slug: je
+  order: 3
+  description: |
+    La Junior-Entreprise de l’Ensimag est une association à but non lucratif et à visée pédagogique et professionnelle. Elle propose aux étudiants de participer à des projets avec des entreprises, en tant que Chargé d’Affaires (chef de projet) ou Intervenant (développeur), l’occasion de compléter ton cursus par des applications pratiques ou une coloration commerciale.
+
+    Mais la JE c’est avant tout une association avec une équipe soudée et motivée qui te fera partir en congrès à l’autre bout de la France et rencontrer les autres Junior-Entrepreneurs de Grenoble et d’ailleurs ! Rendez-vous à la Kfet Awards si tu veux les voir staffer (polos verts et bleus brodés Nsigma) ;)
 polecom:
   username: Pôle com'
   email: polecom@asso-ensimag.fr
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  slug: pole-com
+  order: 4
+  description: |
+    Le Pôle Communication de l’Ensimag s’assure que tu n’oublieras pas tes années à l’école… en les immortalisant ;-) L’appareil sous le bras, ils bravent les conditions extrêmes des Kfets et Soirées pour figer à jamais les différents moments de ta vie d’étudiant.
+
+    Le Pôle Com’ édite aussi le Post’IT, journal des étudiants de l’Ensimag, dont tu as reçu un premier exemplaire dans ton welcome-pack !
 polegala:
   username: Pôle gala
   email: polegala@asso-ensimag.fr
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  slug: pole-gala
+  order: 5
+  description: |
+    L’association qui organise le Gala de l’Ensimag, ou la soirée étudiante la plus classe à laquelle tu auras l’occasion d’assister à l’Imag ! Pendant l’année, ils se chargent de contacter des salles somptueuses (un château en général) pour les louer le temps d’un soir, d’embaucher un traiteur pour te régaler, et de t’arroser de champagne. Tenue correcte exigée !
 gaming:
   username: Ensimag gaming
   email: gaming@asso-ensimag.fr
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  slug: ensimag-gaming
+  order: 6
+  description: |
+    A rédiger :-)
 engine:
   username: Club Engine
   email: engine@asso-ensimag.fr
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  slug: club-engine
+  order: 7
+  description: |
+    Asso relativement jeune, le Club Engine propose aux étudiants motivés par les jeux vidéos en général de réaliser des projets sur leur temps libre comme des moteurs 3D ou des petits jeux.
 securimag:
   username: SecurIMAG
   email: securimag@asso-ensimag.fr
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  slug: securimag
+  order: 8
+  description: |
+    L’association des passionnés de sécurité informatique, elle propose des conférences, des séminaires, des concours de hacking (CTF), des TP, dans des domaines liés à la sécurité comme le réseau, le web, la programmation bas niveau, la cryptologie, le reverse-engineering, la stéganographie, le forensic, l’exploitation et plus encore !

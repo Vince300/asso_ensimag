@@ -1,0 +1,22 @@
+<div class="row">
+  <h1 class="page-header">Les associations de l'Ensimag</h1>
+  <ol class="breadcrumb">
+    <li><%= link_to "Accueil", root_path %></li>
+    <li class="active">Associations</li>
+  </ol>
+</div>
+
+<% last = 1
+   all_assos.each_with_index do |asso, i| %>
+  <% if (i % 3) == 0 %>
+    <div class="row">
+  <% end %>
+    <%= render partial: "asso_item", locals: { asso: asso } %>
+  <% if (i + 1) % 3 == 0 %>
+    </div>
+  <% end
+     last = i %>
+<% end %>
+<% if (last + 1) % 3 != 0 %>
+  </div>
+<% end %>

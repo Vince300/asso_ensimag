@@ -1,3 +1,8 @@
 footer
   .row
-    .col-lg-12 Copyright © Pôle com' Ensimag 2015-2016
+    .col-lg-6.text-right Copyright © Pôle com' Ensimag 2015-2016
+    .col-lg-6
+      - unless user_signed_in?
+        ul
+          li= link_to "Connexion asso", new_user_session_path
+          li= link_to "Connexion admin", admin_root_path

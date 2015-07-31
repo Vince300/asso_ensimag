@@ -1,0 +1,19 @@
+.row
+  h1.page-header
+    = @asso.username
+    small
+      | A propos
+      - if can_edit_asso(@asso)
+        small= render partial: "action_links", locals: { asso: @asso }
+  ol.breadcrumb
+    li= link_to "Accueil", root_path
+    li= link_to "Associations", assos_path
+    li= link_to @asso.username, asso_path(@asso)
+    li.active= "A propos"
+
+.row
+  .col-md-8
+    img.img-responsive src="http://placehold.it/900x300"
+    hr
+    = markdown(@asso.description) or "Cette association n'a pas encore édité sa description."
+  .col-md-4= render partial: "social_block", locals: { asso: @asso }

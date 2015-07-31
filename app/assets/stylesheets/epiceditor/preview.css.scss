@@ -1,0 +1,10 @@
+@import "bootstrap_configuration";
+@import "bootstrap";
+
+html { padding:10px; height: 100%; }
+body {
+  @extend .form-control;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}

@@ -12,16 +12,12 @@
 *
 *= require_tree .
 *= stub active_admin
-
-*= require_self
+*= require font-awesome
 */
 @import "bootstrap_configuration";
-
 @import "bootstrap-sprockets";
-
 @import "bootstrap";
-
-//->Prelang (ui_framework:twitter_bootstrap)
+@import "base/epiceditor";
 
 // Give everything in 'yield' margin to separate it.
 .yield {
@@ -111,7 +107,12 @@ header.carousel .fill {
 /* Footer Styles */
 
 footer {
-  margin: 50px 0;
+  margin: 35px 0;
+  color: #7b7b7b;
+}
+
+footer ul {
+  list-style-type: none;
 }
 
 /* Responsive Styles */
@@ -155,4 +156,10 @@ footer {
 
 .page-content {
   background: #fff;
+  padding-bottom: 2em;
+}
+
+/* Header styles */
+h1.page-header small {
+  margin: 0 $line-height-computed;
 }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150730222400) do
+ActiveRecord::Schema.define(version: 20150731183302) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -58,10 +58,16 @@ ActiveRecord::Schema.define(version: 20150730222400) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "username"
+    t.string   "slug"
+    t.text     "description"
+    t.integer  "order"
+    t.string   "site_url"
+    t.string   "facebook_url"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["slug"], name: "index_users_on_slug"
   add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end

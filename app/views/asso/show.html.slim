@@ -1,0 +1,17 @@
+.row
+  h1.page-header
+    = @asso.username
+    small
+      | Blog
+      - if can_edit_asso(@asso)
+        small= render partial: "action_links", locals: { asso: @asso }
+  ol.breadcrumb
+    li= link_to "Accueil", root_path
+    li= link_to "Associations", assos_path
+    li.active= @asso.username
+
+.row
+  .col-md-8 A faire
+  .col-md-4
+    = render partial: "social_block", locals: { asso: @asso }
+    = render partial: "about_block", locals: { asso: @asso }

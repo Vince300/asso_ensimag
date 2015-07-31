@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  get 'home/index'
+
+  get 'assos' => 'asso#index', as: :assos
+  get 'asso/:id' => 'asso#show', as: :asso
+  get 'asso/:id/edit' => 'asso#edit', as: :edit_asso
+  get 'asso/:id/detail' => 'asso#detail', as: :detail_asso
+  put 'asso/:id' => 'asso#update', as: :update_asso
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   devise_for :admin_users, ActiveAdmin::Devise.config

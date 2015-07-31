@@ -1,0 +1,16 @@
+.well
+  h4 Contacter l'asso
+  p
+    = fa_icon "envelope-o"
+    span= " E-mail : "
+    = mail_to asso.email, nil, replace_at: " [a] ", replace_dot: " [point] ", encode: :hex
+  - if asso.site_url
+    p
+      = fa_icon "globe"
+      span= " Site web : "
+      = link_to asso.site_url, asso.site_url
+  - if asso.facebook_url
+    p
+      = fa_icon "facebook"
+      span= " Facebook : "
+      = link_to "Page facebook", asso.facebook_url

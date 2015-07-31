@@ -1,17 +1,22 @@
-.page-header
-  h1= t ".title", default: "Connexion"
-= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-horizontal form-user"}) do |f|
-  .form-group
-    = f.label :login, "Adresse e-mail", class: "control-label col-md-4"
-    .col-md-8
-      = f.text_field :login, class: "text-field form-control", html: {spellcheck: "false"}
-  .form-group
-    = f.label :password, "Mot de passe", class: "control-label col-md-4"
-    .col-md-8
-      = f.password_field :password, class: "text-field form-control", html: {autocomplete: "off"}
-  .form-group
-    .col-md-offset-4.col-md-8
-      = f.submit "Connexion", class: "btn btn-primary"
-  .form-group
-    .col-md-offset-4.col-md-8
-      = render "devise/shared/links"
+row
+  h1.page-header Connexion
+  ol.breadcrumb
+    li= link_to "Accueil", root_path
+    li.active Compte utilisateur
+
+.row
+  = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-horizontal form-user"}) do |f|
+    .form-group
+      = f.label :login, "Adresse e-mail", class: "control-label col-md-4"
+      .col-md-8
+        = f.text_field :login, class: "text-field form-control", html: {spellcheck: "false"}
+    .form-group
+      = f.label :password, "Mot de passe", class: "control-label col-md-4"
+      .col-md-8
+        = f.password_field :password, class: "text-field form-control", html: {autocomplete: "off"}
+    .form-group
+      .col-md-offset-4.col-md-8
+        = f.submit "Connexion", class: "btn btn-primary"
+    .form-group
+      .col-md-offset-4.col-md-8
+        = render "devise/shared/links"
