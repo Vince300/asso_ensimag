@@ -6,13 +6,18 @@ Rails.application.routes.draw do
   get 'assos' => 'asso#index', as: :assos
 
   # Specific asso details
-  get 'asso/:id' => 'asso#show', as: :asso
-  get 'asso/:id/edit' => 'asso#edit', as: :edit_asso
+  get 'asso/:id' => 'asso#show',          as: :asso
+  put 'asso/:id' => 'asso#update',        as: :update_asso
+  get 'asso/:id/edit'   => 'asso#edit',   as: :edit_asso
   get 'asso/:id/detail' => 'asso#detail', as: :detail_asso
-  put 'asso/:id' => 'asso#update', as: :update_asso
 
   # Asso blog
-  get 'asso/post/:id' => 'blog_post#show', as: :post
+  get    'asso/:asso_id/post/new'      => 'blog_post#new',     as: :new_post
+  post   'asso/:asso_id/post/new'      => 'blog_post#create',  as: :create_post
+  get    'asso/:asso_id/post/:id'      => 'blog_post#show',    as: :post
+  get    'asso/:asso_id/post/:id/edit' => 'blog_post#edit',    as: :edit_post
+  put    'asso/:asso_id/post/:id/edit' => 'blog_post#update',  as: :update_post
+  delete 'asso/:asso_id/post/:id'      => 'blog_post#destroy', as: :destroy_post
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   devise_for :admin_users, ActiveAdmin::Devise.config

@@ -25,7 +25,7 @@ nav.navbar.navbar-fixed-top.navbar-inverse role="navigation"
             li= link_to "Toutes les assos", assos_path
       - if user_signed_in?
         ul.nav.navbar-nav.navbar-right
-          li= link_to edit_asso_path(current_user) do
+          li= link_to asso_path(current_user) do
             span.glyphicon.glyphicon-user
             |  #{current_user.username}
           li= link_to edit_user_registration_path do

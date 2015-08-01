@@ -10,8 +10,8 @@
   = simple_form_for(@asso, url: update_asso_path(@asso), html: { method: :put }) do |f|
     = f.error_notification
     .form-inputs
-      = f.input :description, label: "Description de l'association", wrapper_html: { class: 'epiceditor' }
       = f.input :site_url, label: "Site web", hint: "Laisser vide pour masquer."
       = f.input :facebook_url, label: "Facebook", hint: "Lien complet vers la page Facebook. Laisser vide pour masquer."
+      = f.input :description, label: "Description de l'association", wrapper_html: { class: 'epiceditor' }
     .form-actions
-      = f.button :submit, "Enregistrer"
+      = f.button :submit, "Enregistrer", class: 'btn btn-primary'

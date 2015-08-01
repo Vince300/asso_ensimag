@@ -21,4 +21,8 @@ module ApplicationHelper
     @markdown_plain = Redcarpet::Markdown.new(Redcarpet::Render::StripDown) if @markdown_plain.nil?
     return @markdown_plain.render(text)
   end
+
+  def full_post_path(post)
+    post_path(:asso_id => post.author, :id => post)
+  end
 end

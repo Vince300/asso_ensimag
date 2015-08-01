@@ -1,5 +1,5 @@
 class AssoController < ApplicationController
-  include AssoScoped
+  before_action :set_asso, except: [ :index ]
 
   # GET /assos
   def index
@@ -26,4 +26,9 @@ class AssoController < ApplicationController
       render action: 'edit'
     end
   end
+
+  protected
+    def set_asso
+      @asso = User.friendly.find(params[:id])
+    end
 end

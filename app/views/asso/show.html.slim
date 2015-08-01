@@ -3,7 +3,7 @@
     = @asso.username
     small
       | Blog
-      - if can_edit_asso(@asso)
+      - if can_edit(@asso)
         small= render partial: "action_links", locals: { asso: @asso }
   ol.breadcrumb
     li= link_to "Accueil", root_path

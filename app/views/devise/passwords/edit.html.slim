@@ -13,5 +13,5 @@
       = f.input :password, label: "Nouveau mot de passe", required: true, autofocus: true, hint: ("Au moins #{@minimum_password_length} caract�res" if @minimum_password_length)
       = f.input :password_confirmation, label: "Confirmation du nouveau mot de passe", required: true
     .form-actions
-      = f.button :submit, "Modifier mon mot de passe"
+      = f.button :submit, "Modifier mon mot de passe", class: 'btn btn-primary'
   = render "devise/shared/links"
