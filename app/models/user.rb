@@ -31,4 +31,7 @@ class User < ActiveRecord::Base
   def self.ordered_all
     self.all.order(:order)
   end
+
+  # BlogPost relation
+  has_many :posts, class_name: 'BlogPost', foreign_key: 'author_id'
 end

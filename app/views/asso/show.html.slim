@@ -11,7 +11,9 @@
     li.active= @asso.username
 
 .row
-  .col-md-8 A faire
+  .col-md-8
+    - @asso.posts.order(published: :desc).each do |post|
+      = render partial: "blog_post/post_item", locals: { post: post }
   .col-md-4
     = render partial: "social_block", locals: { asso: @asso }
     = render partial: "about_block", locals: { asso: @asso }

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Post excitant n°1
+  published: 2015-07-31 01:04:13
+  summary: Le résumé du post 1
+  body: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid illo sed a laboriosam quasi esse hic tenetur voluptas. Veniam alias, quae veritatis reiciendis magnam aperiam, blanditiis rem iste qui nostrum.
+  author: cercle
+
+two:
+  title: Post excitant n°2
+  published: 2015-08-01 01:04:13
+  summary: Le résumé du post 2
+  body: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid illo sed a laboriosam quasi esse hic tenetur voluptas. Veniam alias, quae veritatis reiciendis magnam aperiam, blanditiis rem iste qui nostrum.
+  author: cercle
