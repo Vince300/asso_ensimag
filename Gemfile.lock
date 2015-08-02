@@ -87,6 +87,8 @@ GEM
       sass (>= 3.2.19)
     bootstrap-sass-extras (0.0.6)
       rails (>= 3.1.0)
+    bootstrap3-datetimepicker-rails (4.14.30)
+      momentjs-rails (>= 2.8.1)
     bourbon (3.2.4)
       sass (~> 3.2)
       thor
@@ -165,6 +167,8 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.6.2)
     minitest (5.7.0)
+    momentjs-rails (2.10.3)
+      railties (>= 3.1)
     multi_json (1.11.2)
     multi_test (0.1.2)
     multi_xml (0.5.5)
@@ -188,6 +192,7 @@ GEM
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
+    pg (0.18.2)
     pg (0.18.2-x64-mingw32)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
@@ -293,6 +298,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass (= 3.3.5)
   bootstrap-sass-extras
+  bootstrap3-datetimepicker-rails (~> 4.14.30)
   bundler
   coffee-rails (~> 4.0.0)
   cucumber-rails
@@ -304,6 +310,7 @@ DEPENDENCIES
   friendly_id (~> 5.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  momentjs-rails (>= 2.9.0)
   omniauth
   omniauth-facebook
   pg

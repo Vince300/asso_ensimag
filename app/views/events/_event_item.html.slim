@@ -1,0 +1,24 @@
+div class=((event.passed? ? 'passed ' : '') + 'row')
+  .col-md-8
+    = link_to event_path(event) do
+      img.img-responsive.img-hover src="http://placehold.it/700x300"
+  .col-md-4
+    h3= event.name
+    .faded
+      p
+        = fa_icon "clock-o"
+        = " "
+        = time_tag event.start_time
+      p
+        = fa_icon "map-marker"
+        = " #{event.location}"
+      - unless hide_asso
+        p
+          = fa_icon "users"
+          = " "
+          = link_to event.asso.username, asso_path(event.asso)
+    p
+      = descriptive_blob(event, 120 + (hide_asso ? 30 : 0))
+      = " "
+      = link_to "Plus d'infos", event_path(event)
+hr

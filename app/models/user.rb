@@ -35,6 +35,12 @@ class User < ActiveRecord::Base
 
   # Event relation
   has_many :events, class_name: 'Event', foreign_key: 'asso_id'
+
+  # Gets the next event
+  def next_event
+    @next_event ||= events.coming.first
+  end
+
   # Gets a few random assos
   def self.sample(count)
     self.order(APP_CONFIG['random_order_function']).limit(count)

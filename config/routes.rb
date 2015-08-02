@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :blog_posts, path: 'posts'
 
   # Asso events
+  get 'events/calendar'     => 'events#calendar',        as: :events_calendar
+  get 'asso/:id/events'     => 'events#asso_events',     as: :asso_events
   resources :events
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]

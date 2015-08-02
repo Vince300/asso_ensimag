@@ -24,7 +24,9 @@ class BlogPostsController < ApplicationController
 
   # POST /posts
   def create
-    @post = BlogPost.new(params[:blog_post].permit(:title, :summary, :body))
+    @post = BlogPost.create(params[:blog_post].permit(:title, :summary, :body))
+    @post.slug = nil
+
     # Ensure the author has been set
     @post.author = current_user
     # Same for the published datetime

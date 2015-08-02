@@ -9,6 +9,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "base/epiceditor";
+@import "bootstrap-datetimepicker";
+
 // Modern Business Template
 /*!
  * Start Bootstrap - Modern Business HTML Template (http://startbootstrap.com)
@@ -80,8 +82,10 @@ footer ul {
 }
 
 /* Header styles */
-h1.page-header small {
-  margin: 0 $line-height-computed;
+h1, h2, h3, h4, h5, h6 {
+  small {
+    margin-left: ($line-height-computed / 2);
+  }
 }
 
 .epiceditor-parent {
@@ -99,4 +103,14 @@ h1.page-header small {
 
 .form-user {
   max-width: 450px;
+}
+
+.faded {
+  color: #7b7b7b;
+  margin-left: 10px;
+  margin-bottom: 10px;
+
+  p {
+    margin-bottom:0;
+  }
 }

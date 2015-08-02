@@ -1,0 +1,26 @@
+- title "#{@asso.username} - Events"
+.container
+  .row
+    h1.page-header
+      = @asso.username
+      small
+        | Events
+        small
+          | Ajourd'hui :
+          = time_tag Date.today
+        - if can_edit(@asso)
+          small
+            = link_to "Nouvel event", new_event_path
+    ol.breadcrumb
+      li= link_to "Accueil", root_path
+      li= link_to "Assos", assos_path
+      li= link_to @asso.username, asso_path(@asso)
+      li.active Events
+
+  .row
+    .col-md-3
+      = render partial: "events_sidebar"
+      = render partial: "asso/about_block", locals: { asso: @asso }
+    .col-md-9
+      - @events.each do |event|
+        = render partial: "event_item", locals: { event: event, hide_asso: true }

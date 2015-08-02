@@ -1,5 +1,5 @@
 .well
-  h4 Contacter l'asso
+  h4 Contacter #{link_to asso.username, asso_path(asso)}
   p
     = fa_icon "envelope-o"
     span= " E-mail : "
@@ -11,6 +11,6 @@
       = link_to asso.site_url, asso.site_url
   - if asso.facebook_url
     p
-      = fa_icon "facebook"
-      span= " Facebook : "
+      = fa_icon "facebook-official"
+      = " "
       = link_to "Page facebook", asso.facebook_url

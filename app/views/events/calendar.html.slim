@@ -1,16 +1,13 @@
-- title "Events à venir"
+- title "Calendrier des events"
 .container
   .row
     h1.page-header
       | Events
       small
-        | A venir
+        | Calendrier
         small
           | Ajourd'hui :
           = time_tag Date.today
-        - if can_edit(current_user)
-          small
-            = link_to "Nouvel event", new_event_path
     ol.breadcrumb
       li= link_to "Accueil", root_path
       li.active= content_for :title
@@ -19,5 +16,4 @@
     .col-md-3
       = render partial: "events_sidebar"
     .col-md-9
-      - @events.each do |event|
-        = render partial: "event_item", locals: { event: event, hide_asso: false }
+      | Bientôt

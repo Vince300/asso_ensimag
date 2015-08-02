@@ -18,9 +18,17 @@ fr:
         title: Titre
         summary: Résumé
         body: Contenu de l'article
-      admin_user:
+      event:
+        name: Nom
+        start_time: Heure et date de début
+        end_time: Heure et date de fin
+        location: Emplacement
+        facebook_url: Lien vers la page de l'évènement Facebook
+        description: Description
     hints:
       user:
         current_password: Votre mot de passe actuel est requis pour confirmer les modifications
         edit:
           password: Laisser vide pour garder le mot de passe actuel
+      event:
+        facebook_url: Laisser vide pour ne pas afficher de lien.

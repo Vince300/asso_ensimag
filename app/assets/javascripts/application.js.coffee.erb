@@ -3,6 +3,9 @@
 # = require turbolinks
 # = require bootstrap
 # = require epiceditor
+# = require moment
+# = require moment/fr
+# = require bootstrap-datetimepicker
 
 $ ->
   init_editors = ->
@@ -26,10 +29,16 @@ $ ->
         clientSideStorage: false,
         theme:
           preview: '<%= asset_path("epiceditor/preview.css") %>',
-          editor: '<%= asset_path("editor/epic-light.css") %>')
+          editor: '<%= asset_path("epiceditor/editor.css") %>')
 
       editor.load()
       editor.reflow()
+    $('.form-datetime').each (i, item) ->
+      $(item).datetimepicker
+        locale: 'fr'
+        sideBySide: true
+        showTodayButton: true
+        allowInputToggle: true
 
   $(document).ready(init_editors)
   $(document).on('page:load', init_editors)

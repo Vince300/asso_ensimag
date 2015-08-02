@@ -57,6 +57,10 @@ gem 'font-awesome-rails'
 # E-mail spam protection
 gem 'actionview-encoded_mail_to'
 
+# DateTime picker
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
+
 gem 'bundler'
 
 gem 'activeadmin', github: 'gregbell/active_admin'

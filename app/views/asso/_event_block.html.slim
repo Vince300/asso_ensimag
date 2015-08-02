@@ -1,0 +1,22 @@
+.well
+  - if asso.next_event.nil?
+    em Aucun évènement à venir
+  - else
+    h4
+      = asso.next_event.name
+    .faded
+      p
+        = fa_icon "clock-o"
+        = " "
+        = time_tag asso.next_event.start_time
+      p
+        = fa_icon "map-marker"
+        = " "
+        = asso.next_event.location
+      - if asso.next_event.facebook_url
+        p
+          = fa_icon "facebook-official"
+          = " "
+          = link_to "Page de l'évènement", asso.next_event.facebook_url
+    p= descriptive_blob(asso.next_event)
+    = link_to "Plus d'infos", event_path(asso.next_event), class: 'btn btn-default btn-block'

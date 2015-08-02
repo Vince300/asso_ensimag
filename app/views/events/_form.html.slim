@@ -1,9 +1,22 @@
-= form_for @event do |f|
-  - if @event.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
-      ul
-        - @event.errors.full_messages.each do |message|
-          li = message
-
-  .actions = f.submit
+= simple_form_for(event, url: form_url, html: { method: form_method }) do |f|
+  .col-lg-8
+    = f.error_notification
+    .form-inputs
+      = f.input :name, required: true
+      = f.input :start_time, as: :date_time_picker, required: true
+      = f.input :end_time, as: :date_time_picker, required: true
+      = f.input :location, required: true
+      = f.input :facebook_url, required: false
+      = f.input :description, wrapper_html: { class: 'epiceditor' }
+  .col-md-4
+    .well
+      h4 Actions
+      .form-actions
+        = f.button :submit, class: 'btn btn-primary'
+        - if event.id
+          = link_to "Supprimer", event_path(event), method: :delete,
+            data:  { confirm: "Voulez-vous vraiment supprimer cet event ? Cette opération est irréversible." },
+            class: 'btn btn-danger btn-left-margin'
+          = link_to "Annuler", event_path(event), class: 'btn btn-default btn-left-margin'
+        - else
+          = link_to "Annuler", asso_events_path(asso), class: 'btn btn-default btn-left-margin'

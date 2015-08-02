@@ -1,5 +1,15 @@
-h1 New event
+.container
+  .row
+    h1.page-header= title "Nouvel event"
+    ol.breadcrumb
+      li= link_to "Accueil", root_path
+      li= link_to "Associations", assos_path
+      li= link_to @asso.username, asso_path(@asso)
+      li= link_to "Events", asso_events_path(@asso)
+      li.active Nouvel event
 
-== render 'form'
-
-= link_to 'Back', events_path
+  .row
+    = render partial: 'form', locals: { event: @event,
+                                        asso: @asso,
+                                        form_url: events_path,
+                                        form_method: :post }

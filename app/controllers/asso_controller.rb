@@ -3,7 +3,7 @@ class AssoController < ApplicationController
 
   # GET /assos
   def index
-    @assos = User.ordered_all
+    @assos = User.all
   end
 
   # GET /asso/:id

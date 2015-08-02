@@ -1,6 +1,43 @@
-p#notice = notice
+.container
+  .row
+    h1.page-header
+      = title @event.name
+      small
+        | Organisé par #{link_to @event.asso.username, asso_path(@event.asso)}
+        - if can_edit(@event)
+          small= link_to "Modifier", edit_event_path(@event)
+  ol.breadcrumb
+    li= link_to "Accueil", root_path
+    li= link_to "Assos", assos_path
+    li= link_to @event.asso.username, asso_path(@event.asso)
+    li= link_to "Events", asso_events_path(@event.asso)
+    li.active= @event.name
 
-
-= link_to 'Edit', edit_event_path(@event)
-'|
-= link_to 'Back', events_path
+  .row
+    .col-md-4
+      .well
+        h4 Détails de l'évènement
+        .indented
+          p
+            = fa_icon "clock-o"
+            = " "
+            = time_tag @event.start_time
+            br
+            = fa_icon "long-arrow-right"
+            = " "
+            = time_tag @event.end_time
+          p
+            = fa_icon "map-marker"
+            = " "
+            = @event.location
+          - if @event.facebook_url
+            p
+              = fa_icon "facebook-official"
+              = " "
+              = link_to "Page de l'évènement", @event.facebook_url
+      = render partial: "asso/social_block", locals: { asso: @event.asso }
+      = render partial: "asso/about_block", locals: { asso: @event.asso }
+    .col-lg-8
+      img.img-responsive src="http://placehold.it/700x300"
+      hr
+      = markdown(@event.description)

@@ -1,8 +1,16 @@
-h1 Editing event
+.container
+  .row
+    h1.page-header= title "Edition de l'event \"#{@event.name}\""
+    ol.breadcrumb
+      li= link_to "Accueil", root_path
+      li= link_to "Associations", assos_path
+      li= link_to @asso.username, asso_path(@asso)
+      li= link_to "Events", asso_events_path(@asso)
+      li= link_to @event.name, event_path(@event)
+      li.active Edition
 
-== render 'form'
-
-= link_to 'Show', @event
-'|
-= link_to 'Back', events_path
-
+  .row
+    = render partial: 'form', locals: { event: @event,
+                                        asso: @asso,
+                                        form_url: event_path(@event),
+                                        form_method: :put }

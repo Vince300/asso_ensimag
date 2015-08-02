@@ -1,38 +1,64 @@
-- cache 'home_content' do
-  header#homeCarousel.carousel.slide data-ride="carousel"
-    ol.carousel-indicators
-      - @posts.each_with_index do |post, i|
-        li data-slide-to="#{i}" data-target='#homeCarousel' class=(if i == 0 then 'active' end)
-    .carousel-inner
-      - @posts.each_with_index do |post, i|
-        div class=(if i == 0 then 'item active' else 'item' end)
-          .fill style="background-image:url('http://placehold.it/1920x300&text=Slide+#{i}');"
-          .carousel-caption
-            = link_to blog_post_path(post)
-              h2= post.title
-              small= truncate markdown_plain(post.summary), length: 50
-    a.left.carousel-control data-slide="prev" href="#homeCarousel"
-      span.icon-prev
-    a.right.carousel-control data-slide="next" href="#homeCarousel"
-      span.icon-next
+// - cache 'home_content' do
+header#homeCarousel.carousel.slide data-ride="carousel"
+  ol.carousel-indicators
+    - @posts.each_with_index do |post, i|
+      li data-slide-to="#{i}" data-target='#homeCarousel' class=(if i == 0 then 'active' end)
+  .carousel-inner
+    - @posts.each_with_index do |post, i|
+      div class=(if i == 0 then 'item active' else 'item' end)
+        .fill style="background-image:url('http://placehold.it/1920x300&text=Slide+#{i}');"
+        .carousel-caption
+          = link_to blog_post_path(post)
+            h2= post.title
+            small= truncate markdown_plain(post.summary), length: 50
+  a.left.carousel-control data-slide="prev" href="#homeCarousel"
+    span.icon-prev
+  a.right.carousel-control data-slide="next" href="#homeCarousel"
+    span.icon-next
 
-  .container
-    .row
-      h1.page-header Bienvenue sur Asso-Ensimag !
-      p Ce site, créé et maintenu par le #{link_to "Pôle com'", asso_path('pole-com')}, rassemble toutes les associations
-        de l'Ensimag. Tu pourras y trouver des articles postés par chaque asso, un calendrier des évents organisés par
-        celles-ci et si cela ne suffit pas, de quoi les contacter.
-    .row
-      h1.page-header Quelques assos
-      - @assos.each do |asso|
-        .row
-          .col-md-7
-            = link_to asso_path(asso) do
-              img.img-responsive.img-hover src="http://placehold.it/900x300"
-          .col-md-5
-            h3= asso.username
-            p= descriptive_blob(asso, 500)
-            = link_to "En savoir plus", asso_path(asso), class: "btn btn-default"
-        hr
+.container
+  .row
+    h1.page-header Bienvenue sur Asso-Ensimag !
+    p Ce site, créé et maintenu par le #{link_to "Pôle com'", asso_path('pole-com')}, rassemble toutes les associations
+      de l'Ensimag. Tu pourras y trouver des articles postés par chaque asso, un calendrier des évents organisés par
+      celles-ci et si cela ne suffit pas, de quoi les contacter.
+  .row
+    h1.page-header Les évènements à venir
+    - if @events.length == 0
+      .text-center
+        em Aucun évènement à venir
+    - else
+      - @events.each do |event|
+        .col-md-4.img-portfolio
+          = link_to event_path(event) do
+            img.img-responsive.img-hover src="http://placehold.it/700x300"
+          h3
+            = link_to event.name, event_path(event)
+            small
+              = fa_icon "clock-o"
+              = " #{distance_of_time_in_words(DateTime.now, event.start_time)}"
+            small
+              = fa_icon "map-marker"
+              = " #{event.location}"
+          p= descriptive_blob(event)
+          em.faded Organisé par #{link_to event.asso.username, asso_events_path(event.asso)}
+      - if @events.length > 1
+        .col-md-4.img-portfolio
+          = link_to events_path do
+            img.img-responsive.img-hover src="http://placehold.it/700x300&text=..."
+          h3
+            = link_to "Tous les events", events_path
+  .row
+    h1.page-header Quelques assos
+    - @assos.each do |asso|
       .row
-        = link_to "Toutes les assos", assos_path, class: "btn btn-block btn-primary btn-lg"
+        .col-md-7
+          = link_to asso_path(asso) do
+            img.img-responsive.img-hover src="http://placehold.it/900x300"
+        .col-md-5
+          h3= link_to asso.username, asso_path(asso)
+          p= descriptive_blob(asso, 400)
+          = link_to "En savoir plus", asso_path(asso), class: "btn btn-default btn-block"
+      hr
+    .row
+      = link_to "Toutes les assos", assos_path, class: "btn btn-block btn-primary btn-lg"
