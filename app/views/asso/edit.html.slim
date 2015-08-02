@@ -1,6 +1,6 @@
 .container
   .row
-    h1.page-header Modifier l'asso #{@asso.username}
+    h1.page-header= title "Modifier l'asso #{@asso.username}"
     ol.breadcrumb
       li= link_to "Accueil", root_path
       li= link_to "Associations", assos_path

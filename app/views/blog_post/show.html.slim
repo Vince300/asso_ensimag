@@ -1,7 +1,7 @@
 .container
   .row
     h1.page-header
-      = @post.title
+      = title @post.title
       small
         = "Par "
         = link_to @asso.username, asso_path(@asso)

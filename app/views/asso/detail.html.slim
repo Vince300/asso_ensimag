@@ -1,7 +1,7 @@
 .container
   .row
     h1.page-header
-      = @asso.username
+      = title @asso.username
       small
         | A propos
         - if can_edit(@asso)

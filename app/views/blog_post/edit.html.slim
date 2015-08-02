@@ -1,6 +1,6 @@
 .container
   .row
-    h1.page-header Edition de l'article "#{@post.title}"
+    h1.page-header= title "Edition de l'article \"#{@post.title}\""
     ol.breadcrumb
       li= link_to "Accueil", root_path
       li= link_to "Associations", assos_path

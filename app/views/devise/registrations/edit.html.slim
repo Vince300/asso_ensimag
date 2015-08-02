@@ -1,6 +1,6 @@
 .container
   .row
-    h1.page-header Paramètres du compte #{resource.username}
+    h1.page-header= title "Paramètres du compte #{resource.username}"
     ol.breadcrumb
       li= link_to "Accueil", root_path
       li.active Compte utilisateur
