@@ -2,7 +2,7 @@ require 'redcarpet/render_strip'
 
 module ApplicationHelper
   def all_assos
-    User.ordered_all
+    User.ordered
   end
 
   def markdown(text)

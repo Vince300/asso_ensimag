@@ -1,0 +1,11 @@
+defaults: &defaults
+  random_order_function: RANDOM()
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  random_order_function: RAND()

@@ -27,14 +27,16 @@ class User < ActiveRecord::Base
 
   devise authentication_keys: [:login]
 
-  # Returns users ordered by their order values
-  def self.ordered_all
-    self.all.order(:order)
-  end
+  # Users should be ordered by the order value
+  scope :ordered, -> { order(:order) }
 
   # BlogPost relation
   has_many :posts, class_name: 'BlogPost', foreign_key: 'author_id'
 
   # Event relation
   has_many :events, class_name: 'Event', foreign_key: 'asso_id'
+  # Gets a few random assos
+  def self.sample(count)
+    self.order(APP_CONFIG['random_order_function']).limit(count)
+  end
 end
