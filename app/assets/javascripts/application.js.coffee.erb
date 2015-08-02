@@ -1,0 +1,35 @@
+# = require jquery
+# = require jquery_ujs
+# = require turbolinks
+# = require bootstrap
+# = require epiceditor
+
+$ ->
+  init_editors = ->
+    $('.epiceditor textarea').each (i, item) ->
+      # Add a link to the markdown cheatsheet
+      adiv = $('<p />').addClass('text-right')
+      adiv.append($('<a />').text("Markdown cheatsheet")
+          .attr('href', "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet")
+          .attr('target', '_blank'))
+      $(item).parent().append(adiv)
+      # Wrap the element in a div, wrapped in a div
+      pdiv = $('<div />').addClass('epiceditor-container')
+      $(item).wrap(pdiv)
+      $(item).parent().wrap($('<div />').addClass('epiceditor-parent'))
+      # Build the editor
+      dv = $(item).parent()[0]
+
+      editor = new EpicEditor(
+        container: dv,
+        autogrow: true,
+        clientSideStorage: false,
+        theme:
+          preview: '<%= asset_path("epiceditor/preview.css") %>',
+          editor: '<%= asset_path("editor/epic-light.css") %>')
+
+      editor.load()
+      editor.reflow()
+
+  $(document).ready(init_editors)
+  $(document).on('page:load', init_editors)

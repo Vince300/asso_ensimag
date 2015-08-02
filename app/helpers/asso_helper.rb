@@ -9,7 +9,7 @@ module AssoHelper
     end
   end
 
-  def descriptive_blob(asso)
-    truncate (markdown_plain(asso.description) or "Pas de description"), length: 100
+  def descriptive_blob(asso, len = 100)
+    truncate (markdown_plain(asso.description) or "Pas de description"), length: len
   end
 end

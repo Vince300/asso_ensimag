@@ -1,19 +1,20 @@
-.row
-  h1.page-header
-    = @asso.username
-    small
-      | Blog
-      - if can_edit(@asso)
-        small= render partial: "action_links", locals: { asso: @asso }
-  ol.breadcrumb
-    li= link_to "Accueil", root_path
-    li= link_to "Associations", assos_path
-    li.active= @asso.username
+.container
+  .row
+    h1.page-header
+      = @asso.username
+      small
+        | Blog
+        - if can_edit(@asso)
+          small= render partial: "action_links", locals: { asso: @asso }
+    ol.breadcrumb
+      li= link_to "Accueil", root_path
+      li= link_to "Associations", assos_path
+      li.active= @asso.username
 
-.row
-  .col-md-8
-    - @asso.posts.order(published: :desc).each do |post|
-      = render partial: "blog_post/post_item", locals: { post: post }
-  .col-md-4
-    = render partial: "social_block", locals: { asso: @asso }
-    = render partial: "about_block", locals: { asso: @asso }
+  .row
+    .col-md-8
+      - @asso.posts.order(published: :desc).each do |post|
+        = render partial: "blog_post/post_item", locals: { post: post }
+    .col-md-4
+      = render partial: "social_block", locals: { asso: @asso }
+      = render partial: "about_block", locals: { asso: @asso }

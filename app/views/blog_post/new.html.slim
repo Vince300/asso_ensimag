@@ -1,13 +1,14 @@
-.row
-  h1.page-header Nouvel article
-  ol.breadcrumb
-    li= link_to "Accueil", root_path
-    li= link_to "Associations", assos_path
-    li= link_to @asso.username, asso_path(@asso)
-    li.active Nouvel article
+.container
+  .row
+    h1.page-header Nouvel article
+    ol.breadcrumb
+      li= link_to "Accueil", root_path
+      li= link_to "Associations", assos_path
+      li= link_to @asso.username, asso_path(@asso)
+      li.active Nouvel article
 
-.row
-  = render partial: 'form', locals: {post: @post,
-                                     asso: @asso,
-                                     form_url: create_post_path(asso_id: @asso),
-                                     form_method: :post}
+  .row
+    = render partial: 'form', locals: {post: @post,
+                                       asso: @asso,
+                                       form_url: create_post_path(asso_id: @asso),
+                                       form_method: :post}

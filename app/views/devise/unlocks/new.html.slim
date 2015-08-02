@@ -1,15 +1,16 @@
-.row
-  h1.page-header Renvoyer les instructions de débloquage
-  ol.breadcrumb
-    li= link_to "Accueil", root_path
-    li.active Compte utilisateur
+.container
+  .row
+    h1.page-header Renvoyer les instructions de débloquage
+    ol.breadcrumb
+      li= link_to "Accueil", root_path
+      li.active Compte utilisateur
 
-.row
-  = simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
-    = f.error_notification
-    = f.full_error :unlock_token
-    .form-inputs
-      = f.input :email, required: true, autofocus: true
-    .form-actions
-      = f.button :submit, "Renvoyer les instructions de débloquage", class: 'btn btn-primary'
-  = render "devise/shared/links"
+  .row
+    = simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+      = f.error_notification
+      = f.full_error :unlock_token
+      .form-inputs
+        = f.input :email, required: true, autofocus: true
+      .form-actions
+        = f.button :submit, "Renvoyer les instructions de débloquage", class: 'btn btn-primary'
+    = render "devise/shared/links"

@@ -1,17 +1,18 @@
-.row
-  h1.page-header Modification du mot de passe
-  ol.breadcrumb
-    li= link_to "Accueil", root_path
-    li.active Compte utilisateur
+.container
+  .row
+    h1.page-header Modification du mot de passe
+    ol.breadcrumb
+      li= link_to "Accueil", root_path
+      li.active Compte utilisateur
 
-.row
-  = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-    = f.error_notification
-    = f.input :reset_password_token, as: :hidden
-    = f.full_error :reset_password_token
-    .form-inputs
-      = f.input :password, label: "Nouveau mot de passe", required: true, autofocus: true, hint: ("Au moins #{@minimum_password_length} caract�res" if @minimum_password_length)
-      = f.input :password_confirmation, label: "Confirmation du nouveau mot de passe", required: true
-    .form-actions
-      = f.button :submit, "Modifier mon mot de passe", class: 'btn btn-primary'
-  = render "devise/shared/links"
+  .row
+    = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+      = f.error_notification
+      = f.input :reset_password_token, as: :hidden
+      = f.full_error :reset_password_token
+      .form-inputs
+        = f.input :password, label: "Nouveau mot de passe", required: true, autofocus: true, hint: ("Au moins #{@minimum_password_length} caract�res" if @minimum_password_length)
+        = f.input :password_confirmation, label: "Confirmation du nouveau mot de passe", required: true
+      .form-actions
+        = f.button :submit, "Modifier mon mot de passe", class: 'btn btn-primary'
+    = render "devise/shared/links"

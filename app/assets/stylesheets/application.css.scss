@@ -1,41 +1,14 @@
 /*
-* This is a manifest file that'll be compiled into application.css, which will include all the files
-* listed below.
-*
-* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
-* or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
-*
-* You're free to add application-wide styles to this file and they'll appear at the bottom of the
-* compiled file so the styles you add here take precedence over styles defined in any styles
-* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
-* file per style scope.
-*
-*= require_tree .
-*= stub active_admin
-*= stub epiceditor/editor
-*= stub epiceditor/preview
-*= require font-awesome
-*/
+ *= require_tree .
+ *= stub active_admin
+ *= stub epiceditor/preview
+ *= require font-awesome
+ */
+
 @import "bootstrap_configuration";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "base/epiceditor";
-
-// Give everything in 'yield' margin to separate it.
-.yield {
-  margin: 30px;
-}
-
-// Constrain forms for models (scaffolded models) so they aren't full page width.
-.form-model {
-  max-width: 750px;
-}
-
-//->Prelang (user_login:devise)
-.form-user {
-  max-width: 450px;
-}
-
 // Modern Business Template
 /*!
  * Start Bootstrap - Modern Business HTML Template (http://startbootstrap.com)
@@ -51,7 +24,7 @@ html {
 }
 
 body {
-  padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+  padding-top: 50px;
   height: 100%;
 }
 
@@ -61,50 +34,6 @@ body {
 
 .img-hover:hover {
   opacity: 0.8;
-}
-
-/* Home Page Carousel */
-
-header.carousel {
-  height: 50%;
-}
-
-header.carousel .item,
-header.carousel .item.active,
-header.carousel .carousel-inner {
-  height: 100%;
-}
-
-header.carousel .fill {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-}
-
-/* 404 Page Styles */
-
-.error-404 {
-  font-size: 100px;
-}
-
-/* Pricing Page Styles */
-
-.price {
-  display: block;
-  font-size: 50px;
-  line-height: 50px;
-}
-
-.price sup {
-  top: -20px;
-  left: 2px;
-  font-size: 20px;
-}
-
-.period {
-  display: block;
-  font-style: italic;
 }
 
 /* Footer Styles */
@@ -138,18 +67,6 @@ footer ul {
 }
 
 /* Custom coloured styles */
-.navbar-inverse {
-  background: #182900;
-}
-
-.navbar-inverse .navbar-brand {
-  color: #eeffee;
-}
-
-.navbar-inverse .navbar-nav > li > a {
-  color: #929B92;
-}
-
 .navbar-logo {
   height: 32px;
   float: left;
@@ -174,4 +91,12 @@ h1.page-header small {
 
 .btn-left-margin {
   margin-left: 5px;
+}
+
+.alert {
+  margin-bottom:0;
+}
+
+.form-user {
+  max-width: 450px;
 }

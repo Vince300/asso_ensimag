@@ -1,20 +1,21 @@
-.row
-  h1.page-header Paramètres du compte #{resource.username}
-  ol.breadcrumb
-    li= link_to "Accueil", root_path
-    li.active Compte utilisateur
+.container
+  .row
+    h1.page-header Paramètres du compte #{resource.username}
+    ol.breadcrumb
+      li= link_to "Accueil", root_path
+      li.active Compte utilisateur
 
-.row
-  = simple_form_for(resource, as: resource_name, url: update_user_registration_path, html: { method: :put }) do |f|
-    = f.error_notification
-    .form-inputs
-      = f.input :current_password, label: 'Mot de passe', hint: "Votre mot de passe actuel est requis pour confirmer les modifications", required: true
-      = f.input :email, required: true, autofocus: true
-      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-        p
-          | En attente de confirmation pour #{resource.unconfirmed_email}
-      br
-      = f.input :password, label: "Nouveau mot de passe", autocomplete: "off", hint: "Laisser vide pour garder le mot de passe actuel", required: false
-      = f.input :password_confirmation, label: "Confirmation du nouveau mot de passe", required: false
-    .form-actions
-      = f.button :submit, "Enregistrer", class: 'btn btn-primary'
+  .row
+    = simple_form_for(resource, as: resource_name, url: update_user_registration_path, html: { method: :put }) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :current_password, label: 'Mot de passe', hint: "Votre mot de passe actuel est requis pour confirmer les modifications", required: true
+        = f.input :email, required: true, autofocus: true
+        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+          p
+            | En attente de confirmation pour #{resource.unconfirmed_email}
+        br
+        = f.input :password, label: "Nouveau mot de passe", autocomplete: "off", hint: "Laisser vide pour garder le mot de passe actuel", required: false
+        = f.input :password_confirmation, label: "Confirmation du nouveau mot de passe", required: false
+      .form-actions
+        = f.button :submit, "Enregistrer", class: 'btn btn-primary'

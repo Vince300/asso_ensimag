@@ -1,30 +1,31 @@
-.row
-  h1.page-header
-    = @post.title
-    small
-      = "Par "
-      = link_to @asso.username, asso_path(@asso)
-      - if can_edit(@post)
-        small= link_to "Modifier", edit_post_path(id: @post, asso_id: @post.author)
-  ol.breadcrumb
-    li= link_to "Accueil", root_path
-    li= link_to "Associations", assos_path
-    li= link_to @asso.username, asso_path(@asso)
-    li.active= @post.title
+.container
+  .row
+    h1.page-header
+      = @post.title
+      small
+        = "Par "
+        = link_to @asso.username, asso_path(@asso)
+        - if can_edit(@post)
+          small= link_to "Modifier", edit_post_path(id: @post, asso_id: @post.author)
+    ol.breadcrumb
+      li= link_to "Accueil", root_path
+      li= link_to "Associations", assos_path
+      li= link_to @asso.username, asso_path(@asso)
+      li.active= @post.title
 
-.row
-  .col-lg-8
-    hr
-    p
-      = fa_icon "clock-o"
-      = " Le "
-      = time_tag @post.published
-    hr
-    img.img-responsive src="http://placehold.it/900x300"
-    hr
-    .lead
-      = markdown(@post.summary)
-    = markdown(@post.body)
-  .col-md-4
-    = render partial: "asso/social_block", locals: { asso: @asso }
-    = render partial: "asso/about_block", locals: { asso: @asso }
+  .row
+    .col-lg-8
+      hr
+      p
+        = fa_icon "clock-o"
+        = " Le "
+        = time_tag @post.published
+      hr
+      img.img-responsive src="http://placehold.it/900x300"
+      hr
+      .lead
+        = markdown(@post.summary)
+      = markdown(@post.body)
+    .col-md-4
+      = render partial: "asso/social_block", locals: { asso: @asso }
+      = render partial: "asso/about_block", locals: { asso: @asso }
