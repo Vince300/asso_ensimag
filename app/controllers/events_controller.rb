@@ -11,10 +11,17 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
-  # GET /asso/:id/events
+  # GET /asso/:id/events?passed
   def asso_events
     @asso = User.friendly.find(params[:id])
-    @events = @asso.events.ordered
+
+    if params[:passed]
+      @events = @asso.events.passed
+      @passed_events = true
+    else
+      @events = @asso.events.coming
+      @passed_events = false
+    end
   end
 
   # GET /events/1

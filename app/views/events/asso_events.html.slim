@@ -21,6 +21,11 @@
     .col-md-3
       = render partial: "events_sidebar"
       = render partial: "asso/about_block", locals: { asso: @asso }
+      .well
+        - if @passed_events
+          = link_to "Events à venir", asso_events_path(@asso)
+        - else
+          = link_to "Events passés", asso_events_path(@asso, passed: true)
     .col-md-9
       - @events.each do |event|
         = render partial: "event_item", locals: { event: event, hide_asso: true }

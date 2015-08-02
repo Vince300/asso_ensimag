@@ -5,6 +5,7 @@ class Event < ActiveRecord::Base
 
   # Fetches the next events (for these, passed? == false)
   scope :coming, -> { where('end_time >= ?', DateTime.now).order(:start_time) }
+  scope :passed, -> { where('end_time < ?',  DateTime.now).order(start_time: :desc) }
 
   # Fetches the events ordered by their start_time
   scope :ordered, -> { order(start_time: :desc) }
