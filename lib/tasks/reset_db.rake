@@ -6,5 +6,6 @@ namespace :db do
     # Compute slugs
     User.all.each { |user| user.save }
     BlogPost.all.each { |post| post.save }
+    Event.all.each { |event| event.save }
   end
 end
