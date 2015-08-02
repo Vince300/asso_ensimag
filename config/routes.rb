@@ -9,12 +9,7 @@ Rails.application.routes.draw do
   get 'asso/:id/detail' => 'asso#detail', as: :detail_asso
 
   # Asso blog
-  get    'asso/:asso_id/post/new'      => 'blog_post#new',     as: :new_post
-  post   'asso/:asso_id/post/new'      => 'blog_post#create',  as: :create_post
-  get    'asso/:asso_id/post/:id'      => 'blog_post#show',    as: :post
-  get    'asso/:asso_id/post/:id/edit' => 'blog_post#edit',    as: :edit_post
-  put    'asso/:asso_id/post/:id/edit' => 'blog_post#update',  as: :update_post
-  delete 'asso/:asso_id/post/:id'      => 'blog_post#destroy', as: :destroy_post
+  resources :blog_posts, path: 'posts'
 
   # Asso events
   resources :events

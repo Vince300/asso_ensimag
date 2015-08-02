@@ -11,9 +11,9 @@
       .form-actions
         = f.button :submit, class: 'btn btn-primary'
         - if post.id
-          = link_to "Supprimer", destroy_post_path(id: post, asso_id: asso), method: :delete,
+          = link_to "Supprimer", blog_post_path(post), method: :delete,
                     data: { confirm: "Voulez-vous vraiment supprimer cet article ? Cette opération est irréversible." },
                     class: 'btn btn-danger btn-left-margin'
-          = link_to "Annuler", post_path(id: post, asso_id: asso), class: 'btn btn-default btn-left-margin'
+          = link_to "Annuler", blog_post_path(post), class: 'btn btn-default btn-left-margin'
         - else
           = link_to "Annuler", asso_path(asso), class: 'btn btn-default btn-left-margin'

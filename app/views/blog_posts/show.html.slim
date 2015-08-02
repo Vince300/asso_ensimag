@@ -6,7 +6,7 @@
         = "Par "
         = link_to @asso.username, asso_path(@asso)
         - if can_edit(@post)
-          small= link_to "Modifier", edit_post_path(id: @post, asso_id: @post.author)
+          small= link_to "Modifier", edit_blog_post_path(@post)
     ol.breadcrumb
       li= link_to "Accueil", root_path
       li= link_to "Associations", assos_path

@@ -1,12 +1,12 @@
-h2= link_to post.title, full_post_path(post)
+h2= link_to post.title, blog_post_path(post)
 p
   = fa_icon "clock-o"
   = " Le "
   = time_tag post.published
 hr
-= link_to full_post_path(post) do
+= link_to blog_post_path(post) do
   img.img-responsive.img-hover src="http://placehold.it/900x300"
 hr
 p= markdown_plain(post.summary)
-= link_to "En savoir plus", full_post_path(post), class: "btn btn-primary"
+= link_to "En savoir plus", blog_post_path(post), class: "btn btn-primary"
 hr

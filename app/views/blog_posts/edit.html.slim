@@ -5,11 +5,11 @@
       li= link_to "Accueil", root_path
       li= link_to "Associations", assos_path
       li= link_to @asso.username, asso_path(@asso)
-      li= link_to @post.title, full_post_path(@post)
+      li= link_to @post.title, blog_post_path(@post)
       li.active Edition
 
   .row
     = render partial: 'form', locals: { post: @post,
                                         asso: @asso,
-                                        form_url: update_post_path(id: @post, asso_id: @asso),
+                                        form_url: blog_post_path(@post),
                                         form_method: :put }

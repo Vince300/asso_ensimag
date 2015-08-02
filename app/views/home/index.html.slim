@@ -8,7 +8,7 @@
         div class=(if i == 0 then 'item active' else 'item' end)
           .fill style="background-image:url('http://placehold.it/1920x300&text=Slide+#{i}');"
           .carousel-caption
-            = link_to full_post_path(post)
+            = link_to blog_post_path(post)
               h2= post.title
               small= truncate markdown_plain(post.summary), length: 50
     a.left.carousel-control data-slide="prev" href="#homeCarousel"
