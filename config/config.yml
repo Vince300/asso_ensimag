@@ -8,4 +8,4 @@ test:
   <<: *defaults
 
 production:
-  random_order_function: RAND()
+  random_order_function: random()
