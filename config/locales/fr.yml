@@ -1,0 +1,26 @@
+fr:
+  helpers:
+    submit:
+      create: Publier
+      update: Enregistrer
+  simple_form:
+    labels:
+      user:
+        email: Adresse e-mail
+        current_password: Mot de passe actuel
+        password: Nouveau mot de passe
+        password_confirmation: Confirmation du mot de passe
+        username: Nom de l'association
+        description: Description de l'association
+        site_url: Adresse du site web
+        facebook_url: Adresse du compte Facebook
+      blog_post:
+        title: Titre
+        summary: Résumé
+        body: Contenu de l'article
+      admin_user:
+    hints:
+      user:
+        current_password: Votre mot de passe actuel est requis pour confirmer les modifications
+        edit:
+          password: Laisser vide pour garder le mot de passe actuel

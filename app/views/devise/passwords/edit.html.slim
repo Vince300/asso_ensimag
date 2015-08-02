@@ -11,8 +11,8 @@
       = f.input :reset_password_token, as: :hidden
       = f.full_error :reset_password_token
       .form-inputs
-        = f.input :password, label: "Nouveau mot de passe", required: true, autofocus: true, hint: ("Au moins #{@minimum_password_length} caract�res" if @minimum_password_length)
-        = f.input :password_confirmation, label: "Confirmation du nouveau mot de passe", required: true
+        = f.input :password, required: true, autofocus: true, hint: ("Au moins #{@minimum_password_length} caractères" if @minimum_password_length)
+        = f.input :password_confirmation, required: true
       .form-actions
         = f.button :submit, "Modifier mon mot de passe", class: 'btn btn-primary'
     = render "devise/shared/links"

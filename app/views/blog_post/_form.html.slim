@@ -2,14 +2,14 @@
   .col-lg-8
     = f.error_notification
     .form-inputs
-      = f.input :title,   label: "Titre"
-      = f.input :summary, label: "Résumé",               wrapper_html: { class: 'epiceditor' }
-      = f.input :body,    label: "Contenu de l'article", wrapper_html: { class: 'epiceditor' }
+      = f.input :title
+      = f.input :summary, wrapper_html: { class: 'epiceditor' }
+      = f.input :body,    wrapper_html: { class: 'epiceditor' }
   .col-md-4
     .well
       h4 Actions
       .form-actions
-        = f.button :submit, "Enregistrer", class: 'btn btn-primary'
+        = f.button :submit, class: 'btn btn-primary'
         - if post.id
           = link_to "Supprimer", destroy_post_path(id: post, asso_id: asso), method: :delete,
                     data: { confirm: "Voulez-vous vraiment supprimer cet article ? Cette opération est irréversible." },
