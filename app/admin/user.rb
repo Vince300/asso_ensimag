@@ -13,24 +13,25 @@ ActiveAdmin.register User do
     column :facebook_url
   end
 
+  filter :username
+  filter :email
+  filter :current_sign_in_at
+
   controller do
     def find_resource
       scoped_collection.where(slug: params[:id]).first!
     end
   end
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
-
-
+  form do |f|
+    f.inputs "Détails de l'association" do
+      f.input :username
+      f.input :email
+      f.input :description
+      f.input :order
+      f.input :site_url
+      f.input :facebook_url
+    end
+    f.actions
+  end
 end
