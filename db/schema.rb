@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150801120057) do
+ActiveRecord::Schema.define(version: 20150802131335) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -57,6 +57,21 @@ ActiveRecord::Schema.define(version: 20150801120057) do
   end
 
   add_index "blog_posts", ["author_id"], name: "index_blog_posts_on_author_id"
+
+  create_table "events", force: true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "location"
+    t.text     "description"
+    t.string   "facebook_url"
+    t.integer  "asso_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "events", ["asso_id"], name: "index_events_on_asso_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

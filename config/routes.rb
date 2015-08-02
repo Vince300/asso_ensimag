@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'blog_post/show'
-
   # Associations list
   get 'assos' => 'asso#index', as: :assos
 
@@ -18,6 +15,9 @@ Rails.application.routes.draw do
   get    'asso/:asso_id/post/:id/edit' => 'blog_post#edit',    as: :edit_post
   put    'asso/:asso_id/post/:id/edit' => 'blog_post#update',  as: :update_post
   delete 'asso/:asso_id/post/:id'      => 'blog_post#destroy', as: :destroy_post
+
+  # Asso events
+  resources :events
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   devise_for :admin_users, ActiveAdmin::Devise.config

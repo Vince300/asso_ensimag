@@ -34,4 +34,7 @@ class User < ActiveRecord::Base
 
   # BlogPost relation
   has_many :posts, class_name: 'BlogPost', foreign_key: 'author_id'
+
+  # Event relation
+  has_many :events, class_name: 'Event', foreign_key: 'asso_id'
 end
