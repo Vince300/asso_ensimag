@@ -24,13 +24,13 @@ class BlogPostsController < ApplicationController
 
   # POST /posts
   def create
-    @post = BlogPost.create(params[:blog_post].permit(:title, :summary, :body))
+    @post = BlogPost.create(blog_post_params)
     @post.slug = nil
 
     # Ensure the author has been set
     @post.author = current_user
     # Same for the published datetime
-    @post.published = DateTime.now
+    @post.published ||= DateTime.now
     # Save the post
     if @post.save
       redirect_to blog_post_path(@post), flash: { notice: "L'article a été créé avec succès " }
@@ -45,8 +45,13 @@ class BlogPostsController < ApplicationController
 
   # PUT /posts/:id
   def update
+    upd_params = blog_post_params
+
+    # Enforce published datetime
+    upd_params[:published] = DateTime.now if upd_params[:published].empty?
+
     # Update using form parameters
-    if @post.update(params[:blog_post].permit(:title, :summary, :body))
+    if @post.update(upd_params)
       redirect_to blog_post_path(@post), flash: { notice: "Les modifications ont été enregistrées" }
     else
       render action: 'edit'
@@ -71,5 +76,9 @@ class BlogPostsController < ApplicationController
       # Find blog post
       @post = BlogPost.find(params[:id])
       @asso = @post.author
+    end
+
+    def blog_post_params
+      params[:blog_post].permit(:title, :published, :summary, :body)
     end
 end

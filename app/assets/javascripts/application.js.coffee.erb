@@ -15,13 +15,14 @@ $ ->
       adiv.append($('<a />').text("Markdown cheatsheet")
           .attr('href', "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet")
           .attr('target', '_blank'))
-      $(item).parent().append(adiv)
+      $item = $(item)
+      $item.parent().append(adiv)
       # Wrap the element in a div, wrapped in a div
       pdiv = $('<div />').addClass('epiceditor-container')
-      $(item).wrap(pdiv)
-      $(item).parent().wrap($('<div />').addClass('epiceditor-parent'))
+      $item.wrap(pdiv)
+      $item.parent().wrap($('<div />').addClass('epiceditor-parent'))
       # Build the editor
-      dv = $(item).parent()[0]
+      dv = $item.parent()[0]
 
       editor = new EpicEditor(
         container: dv,
@@ -34,11 +35,15 @@ $ ->
       editor.load()
       editor.reflow()
     $('.form-datetime').each (i, item) ->
-      $(item).datetimepicker
+      $item = $(item)
+      v = moment($item.find('input').val())
+      $item.datetimepicker(
         locale: 'fr'
         sideBySide: true
         showTodayButton: true
         allowInputToggle: true
+        showClear: true)
+      $item.data("DateTimePicker").date(v)
 
   $(document).ready(init_editors)
   $(document).on('page:load', init_editors)

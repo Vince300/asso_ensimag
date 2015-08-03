@@ -8,6 +8,7 @@ class AssoController < ApplicationController
 
   # GET /asso/:id
   def show
+    @posts = (current_user == @asso) ? @asso.posts : @asso.posts.published
   end
 
   # GET /asso/:id/detail

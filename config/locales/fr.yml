@@ -16,6 +16,7 @@ fr:
         facebook_url: Adresse du compte Facebook
       blog_post:
         title: Titre
+        published: Date de publication
         summary: Résumé
         body: Contenu de l'article
       event:
@@ -32,3 +33,7 @@ fr:
           password: Laisser vide pour garder le mot de passe actuel
       event:
         facebook_url: Laisser vide pour ne pas afficher de lien.
+      blog_post:
+        published: |
+          Définissez la date à laquelle l'article sera publié.
+          Si vide, la date de publication sera définie lors de l'enregistrement de l'article.

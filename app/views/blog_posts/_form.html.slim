@@ -2,9 +2,10 @@
   .col-lg-8
     = f.error_notification
     .form-inputs
-      = f.input :title
-      = f.input :summary, wrapper_html: { class: 'epiceditor' }
-      = f.input :body,    wrapper_html: { class: 'epiceditor' }
+      = f.input :title,                                          required: true
+      = f.input :published, as: :date_time_picker,               required: true
+      = f.input :summary, wrapper_html: { class: 'epiceditor' }, required: true
+      = f.input :body,    wrapper_html: { class: 'epiceditor' }, required: true
   .col-md-4
     .well
       h4 Actions
