@@ -2,10 +2,7 @@
   .row
     h1.page-header
       = title @asso.username
-      small
-        | Blog
-        - if can_edit(@asso)
-          small= render partial: "action_links", locals: { asso: @asso }
+      small Blog
     ol.breadcrumb
       li= link_to "Accueil", root_path
       li= link_to "Associations", assos_path
@@ -16,6 +13,7 @@
       - @posts.each do |post|
         = render partial: "blog_posts/post_item", locals: { post: post }
     .col-md-4
+      = render partial: "action_links", locals: { asso: @asso }
       = render partial: "event_block", locals: { asso: @asso }
       = render partial: "social_block", locals: { asso: @asso }
       = render partial: "about_block", locals: { asso: @asso }

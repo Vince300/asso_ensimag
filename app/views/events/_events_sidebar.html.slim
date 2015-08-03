@@ -3,3 +3,4 @@
   = link_to "Calendrier", events_calendar_path, class: sidebar_item_class(events_calendar_path, true)
   - all_assos.each do |asso|
     = link_to asso.username, asso_events_path(asso), class: sidebar_item_class(asso_events_path(asso))
+= render partial: "asso/action_links", locals: { asso: current_user }

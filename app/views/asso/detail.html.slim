@@ -2,10 +2,7 @@
   .row
     h1.page-header
       = title @asso.username
-      small
-        | A propos
-        - if can_edit(@asso)
-          small= render partial: "action_links", locals: { asso: @asso }
+      small A propos
     ol.breadcrumb
       li= link_to "Accueil", root_path
       li= link_to "Associations", assos_path
@@ -17,4 +14,6 @@
       img.img-responsive src="http://placehold.it/900x300"
       hr
       = markdown(@asso.description) or "Cette association n'a pas encore édité sa description."
-    .col-md-4= render partial: "social_block", locals: { asso: @asso }
+    .col-md-4
+      = render partial: "action_links", locals: { asso: @asso }
+      = render partial: "social_block", locals: { asso: @asso }

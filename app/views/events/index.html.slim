@@ -8,9 +8,6 @@
         small
           | Ajourd'hui :
           = time_tag Date.today
-        - if can_edit(current_user)
-          small
-            = link_to "Nouvel event", new_event_path
     ol.breadcrumb
       li= link_to "Accueil", root_path
       li.active= content_for :title

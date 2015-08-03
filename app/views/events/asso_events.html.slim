@@ -8,9 +8,6 @@
         small
           | Ajourd'hui :
           = time_tag Date.today
-        - if can_edit(@asso)
-          small
-            = link_to "Nouvel event", new_event_path
     ol.breadcrumb
       li= link_to "Accueil", root_path
       li= link_to "Assos", assos_path
@@ -20,12 +17,12 @@
   .row
     .col-md-3
       = render partial: "events_sidebar"
-      = render partial: "asso/about_block", locals: { asso: @asso }
       .well
         - if @passed_events
           = link_to "Events à venir", asso_events_path(@asso)
         - else
           = link_to "Events passés", asso_events_path(@asso, passed: true)
+      = render partial: "asso/about_block", locals: { asso: @asso }
     .col-md-9
       - @events.each do |event|
         = render partial: "event_item", locals: { event: event, hide_asso: true }
