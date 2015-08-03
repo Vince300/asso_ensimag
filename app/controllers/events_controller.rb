@@ -8,7 +8,11 @@ class EventsController < ApplicationController
 
   # GET /events/calendar
   def calendar
-    @events = Event.all
+    if params[:to] and params[:from]
+      date_to = DateTime.strptime(params[:to], '%Q')
+      date_from = DateTime.strptime(params[:from], '%Q')
+      @events = Event.where('start_time >= ? OR end_time <= ?', date_from, date_to)
+    end
   end
 
   # GET /asso/:id/events?passed
