@@ -1,4 +1,4 @@
-module AssoHelper
+module AssosHelper
   def can_edit(item)
     return false if item.nil?
 

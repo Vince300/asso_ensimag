@@ -26,4 +26,4 @@
           = link_to "Events à venir", asso_events_path(@asso)
         - else
           = link_to "Events passés", asso_events_path(@asso, passed: true)
-      = render partial: "asso/about_block", locals: { asso: @asso }
+      = render partial: "assos/about_block", locals: { asso: @asso }

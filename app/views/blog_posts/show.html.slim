@@ -27,5 +27,5 @@
         .well
           h4 Actions
           = link_to "Modifier l'article", edit_blog_post_path(@post), class: 'btn btn-primary btn-block'
-      = render partial: "asso/social_block", locals: { asso: @asso }
-      = render partial: "asso/about_block", locals: { asso: @asso }
+      = render partial: "assos/social_block", locals: { asso: @asso }
+      = render partial: "assos/about_block", locals: { asso: @asso }

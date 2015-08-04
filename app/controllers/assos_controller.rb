@@ -1,4 +1,4 @@
-class AssoController < ApplicationController
+class AssosController < ApplicationController
   before_action :set_asso, except: [ :index ]
 
   # GET /assos

@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   # Associations list
-  get 'assos' => 'asso#index', as: :assos
+  get 'assos' => 'assos#index', as: :assos
 
   # Specific asso details
-  get 'asso/:id(/page/:page)' => 'asso#show',          as: :asso
-  put 'asso/:id' => 'asso#update',        as: :update_asso
-  get 'asso/:id/edit'   => 'asso#edit',   as: :edit_asso
-  get 'asso/:id/detail' => 'asso#detail', as: :detail_asso
+  get 'asso/:id(/page/:page)' => 'assos#show',   as: :asso
+  put 'asso/:id'              => 'assos#update', as: :update_asso
+  get 'asso/:id/edit'         => 'assos#edit',   as: :edit_asso
+  get 'asso/:id/detail'       => 'assos#detail', as: :detail_asso
 
   # Asso blog
   resources :blog_posts, path: 'posts'
