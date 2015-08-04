@@ -473,9 +473,9 @@ if(!String.prototype.formatNum) {
 		var time_split_count = 60 / time_split;
 		var time_split_hour = Math.min(time_split_count, 1);
 
-		if(((time_split_count >= 1) && (time_split_count % 1 != 0)) || ((time_split_count < 1) && (1440 / time_split % 1 != 0))) {
+		/*if(((time_split_count >= 1) && (time_split_count % 1 != 0)) || ((time_split_count < 1) && (1440 / time_split % 1 != 0))) {
 			$.error(this.locale.error_timedevide);
-		}
+		}*/
 
 		var time_start = this.options.time_start.split(":");
 		var time_end = this.options.time_end.split(":");
@@ -1171,7 +1171,14 @@ if(!String.prototype.formatNum) {
 				return true;
 			}
 			var event_end = this.end || this.start;
-			if((parseInt(this.start) < end) && (parseInt(event_end) >= start)) {
+			var ev_start = parseInt(this.start),
+					ev_end   = parseInt(event_end),
+					lg_day = (ev_end - ev_start) >= 86400000;
+
+			if (!lg_day && ev_start > start && ev_start <= end ||
+					 lg_day && ((ev_start < end && ev_end >= start) ||
+					 						(ev_start < start && ev_end > end)))
+			{
 				events.push(this);
 			}
 		});

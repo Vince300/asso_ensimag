@@ -11,7 +11,8 @@ class EventsController < ApplicationController
     if params[:to] and params[:from]
       date_to = DateTime.strptime(params[:to], '%Q')
       date_from = DateTime.strptime(params[:from], '%Q')
-      @events = Event.where('start_time >= ? OR end_time <= ?', date_from, date_to)
+      @events = Event.where('start_time >= :start OR end_time <= :end OR (start_time < :start AND end_time > :end)',
+                            start: date_from, end: date_to)
     end
   end
 

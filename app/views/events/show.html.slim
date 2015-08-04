@@ -2,10 +2,7 @@
   .row
     h1.page-header
       = title @event.name
-      small
-        | Organisé par #{link_to @event.asso.username, asso_path(@event.asso)}
-        - if can_edit(@event)
-          small= link_to "Modifier", edit_event_path(@event)
+      small Organisé par #{link_to @event.asso.username, asso_path(@event.asso)}
   ol.breadcrumb
     li= link_to "Accueil", root_path
     li= link_to "Assos", assos_path
@@ -35,6 +32,9 @@
               = fa_icon "facebook-official"
               = " "
               = link_to "Page de l'évènement", @event.facebook_url
+        - if can_edit(@event)
+          h4 Actions
+          = link_to "Modifier l'event", edit_event_path(@event), class: 'btn btn-primary btn-block'
       = render partial: "asso/social_block", locals: { asso: @event.asso }
       = render partial: "asso/about_block", locals: { asso: @event.asso }
     .col-lg-8

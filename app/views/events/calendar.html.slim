@@ -1,3 +1,5 @@
+= content_for :head
+  = javascript_include_tag 'calendar', 'data-turbolinks-track' => true
 - title "Calendrier des events"
 .container
   .row
@@ -14,6 +16,19 @@
 
   .row
     .col-md-9
+      .calendar-controls
+        .pull-right.form-inline
+          .btn-group
+            button.btn.btn-primary data-calendar-nav="prev" &lt; Précédent
+            button.btn.btn-default data-calendar-nav="today" Ajourd'hui
+            button.btn.btn-primary data-calendar-nav="next" Suivant &gt;
+          .btn-group
+            button.btn.btn-warning data-calendar-view="year" Année
+            button.btn.btn-warning.active data-calendar-view="month" Mois
+            button.btn.btn-warning data-calendar-view="week" Semaine
+            button.btn.btn-warning data-calendar-view="day" Journée
+        .clearfix
+      h2.calendar-title.page-header
       .calendar data-events-source=events_calendar_path(:json)
     .col-md-3
       = render partial: "events_sidebar"

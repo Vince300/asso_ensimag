@@ -1,0 +1,30 @@
+.events-list {
+  width: 100% !important;
+  padding: 0 2px;
+
+  .event {
+    margin-top: 4px;
+    margin-bottom: 0;
+    border: none;
+  }
+}
+
+.cal-event-list {
+  .event.pull-left {
+    margin-top: 5px;
+  }
+
+  .event-list-details {
+    display: inline-block;
+    margin-left: 5px;
+    color: #727272;
+
+    .asso, .location {
+      margin-left: 2px;
+    }
+
+    .location .fa {
+      margin-right: 2px;
+    }
+  }
+}
