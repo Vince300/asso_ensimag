@@ -24,6 +24,11 @@ class Event < ActiveRecord::Base
     DateTime.now > end_time
   end
 
-  # Skip time zone conversion, assume local time
-  self.skip_time_zone_conversion_for_attributes = [ :start_time, :end_time ]
+  def duration
+    end_time - start_time
+  end
+
+  # Fix for published time formatting
+  include DatetimeAttributesHelper
+  datetime_attribute :start_time, :end_time
 end

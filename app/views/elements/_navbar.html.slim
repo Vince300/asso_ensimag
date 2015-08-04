@@ -32,6 +32,6 @@ nav.navbar.navbar-fixed-top.navbar-inverse role="navigation"
           li= link_to edit_user_registration_path do
             span.glyphicon.glyphicon-cog
             |  Compte
-          li= link_to destroy_user_session_path, method: :delete do
+          li= link_to destroy_user_session_path(redirect_to: URI(request.original_url).path), method: :delete do
             span.glyphicon.glyphicon-log-out
             |  Déconnexion

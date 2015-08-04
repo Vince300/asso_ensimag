@@ -11,12 +11,13 @@ class BlogPost < ActiveRecord::Base
   # Author relation
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
 
-  # Skip time zone conversion, assume local time
-  self.skip_time_zone_conversion_for_attributes = [ :published ]
-
   def slug_candidates
     [
         [:id, :title]
     ]
   end
+
+  # Fix for published time formatting
+  include DatetimeAttributesHelper
+  datetime_attribute :published
 end

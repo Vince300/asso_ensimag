@@ -13,8 +13,6 @@ gem 'sass-rails', '~> 5.0.3'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -66,15 +64,13 @@ gem 'bundler'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise', github: 'plataformatec/devise'
 gem 'simple_form'
-gem 'binding_of_caller'
 gem 'bootstrap-sass', '3.3.5'
 gem 'bootstrap-sass-extras'
-gem 'omniauth'
-gem 'omniauth-facebook'
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
 
 group :development do
+  gem 'binding_of_caller'
   gem 'better_errors'
 end
 

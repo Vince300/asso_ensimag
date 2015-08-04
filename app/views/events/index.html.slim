@@ -13,8 +13,8 @@
       li.active= content_for :title
 
   .row
-    .col-md-3
-      = render partial: "events_sidebar"
     .col-md-9
       - @events.each do |event|
         = render partial: "event_item", locals: { event: event, hide_asso: false }
+    .col-md-3
+      = render partial: "events_sidebar"

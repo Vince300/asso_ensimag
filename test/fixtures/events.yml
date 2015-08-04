@@ -9,6 +9,41 @@ kfet:
   facebook_url: http://facebook.com/
   asso: cercle
 
+minp:
+  name: MINP BDA
+  start_time: 2015-08-07 19:00:00+02:00
+  end_time: 2015-08-08 00:00:00+02:00
+  location: MINP
+  description: Une MINP épique
+  facebook_url: http://facebook.com/
+  asso: bda
+
+pool_party:
+  name: Pool party
+  start_time: 2015-08-08 19:00:00+02:00
+  end_time: 2015-08-09 00:00:00+02:00
+  location: Piscine
+  description: Bref
+  facebook_url: http://facebook.com/
+  asso: bds
+
+lan:
+  name: LAN
+  start_time: 2015-08-10 19:00:00+02:00
+  end_time: 2015-08-10 22:00:00+02:00
+  location: D201
+  description: Bref
+  facebook_url: http://facebook.com/
+  asso: gaming
+
+wei:
+  name: WEI
+  start_time: 2015-08-14 14:00:00+02:00
+  end_time: 2015-08-16 20:00:00+02:00
+  location: Secret
+  description: Le *WEI*
+  asso: cercle
+
 party:
   name: Soirée
   start_time: 2015-08-05 22:00:00+02:00
