@@ -10,9 +10,15 @@
 
   .row
     .col-md-8
+      - has_seen_posts = false
       - @posts.each do |post|
+        - has_seen_posts = true
         = render partial: "blog_posts/post_item", locals: { post: post }
-      = paginate @posts
+      - if has_seen_posts
+        = paginate @posts
+      - else
+        .text-center
+          em Aucun article pour l'instant
     .col-md-4
       = render partial: "action_links", locals: { asso: @asso }
       = render partial: "event_block", locals: { asso: @asso }
