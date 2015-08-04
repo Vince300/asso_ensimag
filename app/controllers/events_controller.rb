@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [ :show, :edit, :update, :destroy ]
 
-  # GET /events
+  # GET /events(/page/:page)
   def index
-    @events = Event.coming
+    @events = Event.coming.page(params[:page])
   end
 
   # GET /events/calendar
@@ -28,7 +28,7 @@ class EventsController < ApplicationController
     end
   end
 
-  # GET /asso/:id/events?passed
+  # GET /asso/:id/events(/page/:page)?passed
   def asso_events
     @asso = User.friendly.find(params[:id])
 
@@ -39,6 +39,8 @@ class EventsController < ApplicationController
       @events = @asso.events.coming
       @passed_events = false
     end
+
+    @events = @events.page(params[:page])
   end
 
   # GET /events/1

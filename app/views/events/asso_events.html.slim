@@ -18,6 +18,7 @@
     .col-md-9
       - @events.each do |event|
         = render partial: "event_item", locals: { event: event, hide_asso: true }
+      = paginate @events
     .col-md-3
       = render partial: "events_sidebar"
       .well

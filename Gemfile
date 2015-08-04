@@ -62,6 +62,9 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 # Color manipulation
 gem 'chroma'
 
+# Pagination
+gem "kaminari"
+
 gem 'bundler'
 
 gem 'activeadmin', github: 'gregbell/active_admin'

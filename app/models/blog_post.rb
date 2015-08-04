@@ -20,4 +20,7 @@ class BlogPost < ActiveRecord::Base
   # Fix for published time formatting
   include DatetimeAttributesHelper
   datetime_attribute :published
+
+  # Pagination using kaminari
+  paginates_per 5
 end

@@ -12,6 +12,7 @@
     .col-md-8
       - @posts.each do |post|
         = render partial: "blog_posts/post_item", locals: { post: post }
+      = paginate @posts
     .col-md-4
       = render partial: "action_links", locals: { asso: @asso }
       = render partial: "event_block", locals: { asso: @asso }

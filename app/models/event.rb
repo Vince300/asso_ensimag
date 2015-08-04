@@ -31,4 +31,7 @@ class Event < ActiveRecord::Base
   # Fix for published time formatting
   include DatetimeAttributesHelper
   datetime_attribute :start_time, :end_time
+
+  # Kaminari pagination
+  paginates_per 15
 end

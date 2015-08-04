@@ -292,6 +292,7 @@ DEPENDENCIES
   friendly_id (~> 5.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   momentjs-rails (>= 2.9.0)
   pg
   rails (= 4.1.4)

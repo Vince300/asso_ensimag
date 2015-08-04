@@ -40,3 +40,10 @@ fr:
         published: |
           Définissez la date à laquelle l'article sera publié.
           Si vide, la date de publication sera définie lors de l'enregistrement de l'article.
+  views:
+    pagination:
+      first: "&laquo;"
+      previous: "&lt;"
+      next: "&gt;"
+      last: "&raquo;"
+      truncate: "&hellip;"

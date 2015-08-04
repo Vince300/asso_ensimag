@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'assos' => 'asso#index', as: :assos
 
   # Specific asso details
-  get 'asso/:id' => 'asso#show',          as: :asso
+  get 'asso/:id(/page/:page)' => 'asso#show',          as: :asso
   put 'asso/:id' => 'asso#update',        as: :update_asso
   get 'asso/:id/edit'   => 'asso#edit',   as: :edit_asso
   get 'asso/:id/detail' => 'asso#detail', as: :detail_asso
@@ -12,9 +12,11 @@ Rails.application.routes.draw do
   resources :blog_posts, path: 'posts'
 
   # Asso events
-  get 'events/calendar'     => 'events#calendar',        as: :events_calendar
-  get 'asso/:id/events'     => 'events#asso_events',     as: :asso_events
-  resources :events
+  get 'events/calendar'             => 'events#calendar',    as: :events_calendar
+  get 'asso/:id/events(/page/:page)' => 'events#asso_events', as: :asso_events
+  resources :events do
+    get 'page/:page', :action => :index, :on => :collection
+  end
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   devise_for :admin_users, ActiveAdmin::Devise.config
