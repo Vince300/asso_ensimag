@@ -49,13 +49,19 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    @event = Event.new
-    @asso = current_user
+    @event = Event.new(asso: current_user)
+    @asso = @event.asso
+
+    # Authorize the event
+    authorize_event
   end
 
   # GET /events/1/edit
   def edit
     @asso = @event.asso
+
+    # Authorize the event
+    authorize_event
   end
 
   # POST /events
@@ -67,6 +73,9 @@ class EventsController < ApplicationController
     # of this event
     @event.asso = current_user
 
+    # Authorize the event
+    authorize_event
+
     if @event.save
       redirect_to event_path(@event), notice: "L'évènement a été créé avec succès."
     else
@@ -76,6 +85,9 @@ class EventsController < ApplicationController
 
   # PATCH/PUT /events/1
   def update
+    # Authorize the event
+    authorize_event
+
     if @event.update(event_params)
       redirect_to @event, notice: "L'évènement a été mis à jour avec succès."
     else
@@ -85,6 +97,9 @@ class EventsController < ApplicationController
 
   # DELETE /events/1
   def destroy
+    # Authorize the event
+    authorize_event
+
     @event.destroy
     redirect_to events_url, notice: "L'évènement a été supprimé avec succès."
   end
@@ -96,5 +111,9 @@ class EventsController < ApplicationController
 
     def event_params
       params[:event].permit(:name, :start_time, :end_time, :location, :description, :facebook_url)
+    end
+
+    def authorize_event
+      authorize @event
     end
 end

@@ -65,6 +65,9 @@ gem 'chroma'
 # Pagination
 gem "kaminari"
 
+# Authorization
+gem 'pundit'
+
 gem 'bundler'
 
 gem 'activeadmin', github: 'gregbell/active_admin'

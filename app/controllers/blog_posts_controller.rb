@@ -19,7 +19,10 @@ class BlogPostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = BlogPost.new
+    @post = BlogPost.new(author: current_user)
+
+    # Authorize the post
+    authorize_post
   end
 
   # POST /posts
@@ -29,6 +32,10 @@ class BlogPostsController < ApplicationController
 
     # Ensure the author has been set
     @post.author = current_user
+
+    # Authorize the post
+    authorize_post
+
     # Same for the published datetime
     @post.published ||= DateTime.now
     # Save the post
@@ -41,10 +48,15 @@ class BlogPostsController < ApplicationController
 
   # GET /posts/:id/edit
   def edit
+    # Authorize the post
+    authorize_post
   end
 
   # PUT /posts/:id
   def update
+    # Authorize the post
+    authorize_post
+
     upd_params = blog_post_params
 
     # Enforce published datetime
@@ -60,6 +72,9 @@ class BlogPostsController < ApplicationController
 
   # DELETE /posts/:id
   def destroy
+    # Authorize the post
+    authorize_post
+
     if @post.destroy
       redirect_to asso_path(@asso)
     else
@@ -80,5 +95,9 @@ class BlogPostsController < ApplicationController
 
     def blog_post_params
       params[:blog_post].permit(:title, :published, :summary, :body)
+    end
+
+    def authorize_post
+      authorize @post
     end
 end
