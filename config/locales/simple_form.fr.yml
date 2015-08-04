@@ -6,4 +6,4 @@ fr:
       text: Requis
       mark: '*'
     error_notification:
-      default_message: "Des erreurs ont été détectées :"
+      default_message: "Des erreurs ont été détectées, veuillez les corriger avant de réessayer."
