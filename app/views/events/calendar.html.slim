@@ -1,5 +1,7 @@
 = content_for :head
-  = javascript_include_tag 'calendar', 'data-turbolinks-track' => true
+  = javascript_include_tag 'calendar',          'data-turbolinks-track' => true
+  = stylesheet_link_tag '/events/calendar.css', 'data-turbolinks-track' => true
+
 - title "Calendrier des events"
 .container
   .row

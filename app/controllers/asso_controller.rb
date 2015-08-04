@@ -21,7 +21,7 @@ class AssoController < ApplicationController
 
   # PUT /asso/:id
   def update
-    if @asso.update(params[:user].permit(:description, :facebook_url, :site_url))
+    if @asso.update(asso_params)
       redirect_to asso_path(@asso), flash: { notice: "Les modifications ont été enregistrées" }
     else
       render action: 'edit'
@@ -31,5 +31,9 @@ class AssoController < ApplicationController
   protected
     def set_asso
       @asso = User.friendly.find(params[:id])
+    end
+
+    def asso_params
+      params[:user].permit(:description, :facebook_url, :site_url, :color)
     end
 end

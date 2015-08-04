@@ -8,11 +8,23 @@ class EventsController < ApplicationController
 
   # GET /events/calendar
   def calendar
-    if params[:to] and params[:from]
-      date_to = DateTime.strptime(params[:to], '%Q')
-      date_from = DateTime.strptime(params[:from], '%Q')
-      @events = Event.where('start_time >= :start OR end_time <= :end OR (start_time < :start AND end_time > :end)',
-                            start: date_from, end: date_to)
+    respond_to do |format|
+      # Respond with calendar page HTML
+      format.html
+      # Respond with events in range as JSON
+      format.json do
+        if params[:to] and params[:from]
+          date_to = DateTime.strptime(params[:to], '%Q')
+          date_from = DateTime.strptime(params[:from], '%Q')
+          @events = Event.where('start_time >= :start OR end_time <= :end OR (start_time < :start AND end_time > :end)',
+                                start: date_from, end: date_to)
+          @success = 1
+        else
+          @success = 0
+        end
+      end
+      # Respond with CSS with event classes for users
+      format.css
     end
   end
 

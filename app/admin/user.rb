@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  permit_params :username, :email, :description, :order, :site_url, :facebook_url
+  permit_params :username, :email, :description, :order, :site_url, :facebook_url, :color
 
   index do
     selectable_column
@@ -7,10 +7,10 @@ ActiveAdmin.register User do
     column :username
     column :slug
     column :email
-    column :description
     column :order
     column :site_url
     column :facebook_url
+    column :color
   end
 
   filter :username
@@ -31,6 +31,7 @@ ActiveAdmin.register User do
       f.input :order
       f.input :site_url
       f.input :facebook_url
+      f.input :color, as: :string
     end
     f.actions
   end

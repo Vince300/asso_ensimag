@@ -99,6 +99,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    chroma (0.0.1)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -280,6 +281,7 @@ DEPENDENCIES
   bootstrap-sass-extras
   bootstrap3-datetimepicker-rails (~> 4.14.30)
   bundler
+  chroma
   coffee-rails (~> 4.0.0)
   cucumber-rails
   database_cleaner

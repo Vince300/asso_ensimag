@@ -6,16 +6,17 @@
 # = require moment
 # = require moment/fr
 # = require bootstrap-datetimepicker
+# = require bootstrap-colorpicker
 
 $ ->
   init_editors = ->
-    $('.epiceditor textarea').each (i, item) ->
+    $('.epiceditor textarea').each ->
       # Add a link to the markdown cheatsheet
       adiv = $('<p />').addClass('text-right')
       adiv.append($('<a />').text("Markdown cheatsheet")
           .attr('href', "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet")
           .attr('target', '_blank'))
-      $item = $(item)
+      $item = $(this)
       $item.parent().append(adiv)
       # Wrap the element in a div, wrapped in a div
       pdiv = $('<div />').addClass('epiceditor-container')
@@ -34,16 +35,20 @@ $ ->
 
       editor.load()
       editor.reflow()
-    $('.form-datetime').each (i, item) ->
-      $item = $(item)
-      v = moment($item.find('input').val())
-      $item.datetimepicker(
+    $('.form-datetime').each ->
+      $this = $(this)
+      v = moment($this.find('input').val())
+      $this.datetimepicker
         locale: 'fr'
         sideBySide: true
         showTodayButton: true
         allowInputToggle: true
-        showClear: true)
-      $item.data("DateTimePicker").date(v)
+        showClear: true
+      $this.data("DateTimePicker").date(v)
+    $('.colorpicker-editor').each ->
+      $(this).colorpicker
+        align: 'left'
+        format: 'hex'
 
   $(document).ready(init_editors)
   $(document).on('page:load', init_editors)

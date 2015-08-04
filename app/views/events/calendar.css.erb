@@ -1,0 +1,13 @@
+<% all_assos.each do |asso| %>
+<% bg_color = asso.color.paint.lighten(60).desaturate(50) %>
+#cal-day-box .day-highlight.dh-event-<%= asso.to_param %> {
+  border: 1px solid <%= bg_color %>;
+}
+.event-<%= asso.to_param %> {
+  background-color: <%= asso.color %>;
+}
+.day-highlight.dh-event-<%= asso.to_param %>:hover,
+.day-highlight.dh-event-<%= asso.to_param %> {
+  background-color: <%= bg_color %>;
+}
+<% end %>

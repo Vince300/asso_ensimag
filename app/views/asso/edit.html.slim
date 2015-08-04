@@ -11,8 +11,9 @@
     = simple_form_for(@asso, url: update_asso_path(@asso), html: { method: :put }) do |f|
       = f.error_notification
       .form-inputs
-        = f.input :site_url, hint: "Laisser vide pour masquer."
-        = f.input :facebook_url, hint: "Lien complet vers la page Facebook. Laisser vide pour masquer."
+        = f.input :site_url
+        = f.input :facebook_url
+        = f.input :color, input_html: { class: 'colorpicker-editor' }
         = f.input :description, wrapper_html: { class: 'epiceditor' }
       .form-actions
         = f.button :submit, class: 'btn btn-primary'
