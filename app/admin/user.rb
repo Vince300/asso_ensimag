@@ -11,6 +11,7 @@ ActiveAdmin.register User do
     column :site_url
     column :facebook_url
     column :color
+    actions
   end
 
   filter :username
@@ -18,6 +19,14 @@ ActiveAdmin.register User do
   filter :current_sign_in_at
 
   controller do
+    def update
+      if params[:user][:password].blank?
+        params[:user].delete("password")
+        params[:user].delete("password_confirmation")
+      end
+      super
+    end
+
     def find_resource
       scoped_collection.where(slug: params[:id]).first!
     end
@@ -27,6 +36,8 @@ ActiveAdmin.register User do
     f.inputs "Détails de l'association" do
       f.input :username
       f.input :email
+      f.input :password
+      f.input :password_confirmation
       f.input :description
       f.input :order
       f.input :site_url

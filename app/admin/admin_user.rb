@@ -1,6 +1,9 @@
 ActiveAdmin.register AdminUser do
   permit_params :email, :password, :password_confirmation
 
+  # No new admin user, and no destroyable admin user
+  actions :index, :show, :update, :edit
+
   index do
     selectable_column
     id_column
