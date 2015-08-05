@@ -2,7 +2,7 @@ ActiveAdmin.register_page "Dashboard" do
   def clear_cache_action(sym, id, full_name)
     page_action sym, method: :post do
       expire_fragment(id)
-      redirect_to collection_path, notice: "#{full_name} effacé"
+      redirect_to admin_dashboard_path, notice: "#{full_name} effacé"
     end
   end
 
