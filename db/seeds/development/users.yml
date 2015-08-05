@@ -6,6 +6,7 @@ cercle:
   order: 0
   site_url: http://ensimag-b.de/
   facebook_url: https://www.facebook.com/cercle.imag
+  color: "#024902"
   description: |
     Le Cercle des Élèves Ensimag est ce qu’on appelle ailleurs le BDE, le Bureau des Élèves.
 
@@ -30,6 +31,7 @@ bds:
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
   slug: bds
   order: 1
+  color: "#008A43"
   description: |
     Le BDS est l’asso qui se charge de te faire bouger pendant ton séjour à l’Imag ! Ils proposent des événements sportifs dont le fameux Week-End Ski (WES).
 
@@ -40,6 +42,7 @@ bda:
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
   slug: bda
   order: 2
+  color: "#006838"
   description: |
     L’association qui cherche à faire ressortir l’artiste qui est en toi ! Leurs événements sont (logiquement) axés art et culture, comme le Global Village où les participants ramènent des spécialités culinaires de chez eux pour les partager.
 
@@ -50,6 +53,7 @@ je:
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
   slug: je
   order: 3
+  color: "#cccccc"
   description: |
     La Junior-Entreprise de l’Ensimag est une association à but non lucratif et à visée pédagogique et professionnelle. Elle propose aux étudiants de participer à des projets avec des entreprises, en tant que Chargé d’Affaires (chef de projet) ou Intervenant (développeur), l’occasion de compléter ton cursus par des applications pratiques ou une coloration commerciale.
 
@@ -60,6 +64,7 @@ polecom:
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
   slug: pole-com
   order: 4
+  color: "#669933"
   description: |
     Le Pôle Communication de l’Ensimag s’assure que tu n’oublieras pas tes années à l’école… en les immortalisant ;-) L’appareil sous le bras, ils bravent les conditions extrêmes des Kfets et Soirées pour figer à jamais les différents moments de ta vie d’étudiant.
 
@@ -70,6 +75,7 @@ polegala:
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
   slug: pole-gala
   order: 5
+  color: "#cccccc"
   description: |
     L’association qui organise le Gala de l’Ensimag, ou la soirée étudiante la plus classe à laquelle tu auras l’occasion d’assister à l’Imag ! Pendant l’année, ils se chargent de contacter des salles somptueuses (un château en général) pour les louer le temps d’un soir, d’embaucher un traiteur pour te régaler, et de t’arroser de champagne. Tenue correcte exigée !
 gaming:
@@ -78,6 +84,7 @@ gaming:
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
   slug: ensimag-gaming
   order: 6
+  color: "#3d3d3d"
   description: |
     A rédiger :-)
 engine:
@@ -86,6 +93,7 @@ engine:
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
   slug: club-engine
   order: 7
+  color: "#cccccc"
   description: |
     Asso relativement jeune, le Club Engine propose aux étudiants motivés par les jeux vidéos en général de réaliser des projets sur leur temps libre comme des moteurs 3D ou des petits jeux.
 securimag:
@@ -94,5 +102,6 @@ securimag:
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
   slug: securimag
   order: 8
+  color: "#cccccc"
   description: |
     L’association des passionnés de sécurité informatique, elle propose des conférences, des séminaires, des concours de hacking (CTF), des TP, dans des domaines liés à la sécurité comme le réseau, le web, la programmation bas niveau, la cryptologie, le reverse-engineering, la stéganographie, le forensic, l’exploitation et plus encore !
