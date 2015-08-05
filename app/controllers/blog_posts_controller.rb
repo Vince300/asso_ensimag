@@ -15,6 +15,9 @@ class BlogPostsController < ApplicationController
 
   # GET /posts/:id
   def show
+    unless request.original_fullpath == blog_post_path(@post)
+      redirect_to blog_post_path(@post)
+    end
   end
 
   # GET /posts/new

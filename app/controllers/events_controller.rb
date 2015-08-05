@@ -45,6 +45,9 @@ class EventsController < ApplicationController
 
   # GET /events/1
   def show
+    unless request.original_fullpath == event_path(@event)
+      redirect_to event_path(@event)
+    end
   end
 
   # GET /events/new
