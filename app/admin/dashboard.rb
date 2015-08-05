@@ -7,7 +7,6 @@ ActiveAdmin.register_page "Dashboard" do
   end
 
   clear_cache_action(:clear_navbar_cache, 'navbar_asso_list', "Cache de la barre de navigation")
-  clear_cache_action(:clear_home_cache, 'home_content', "Cache de la page d'accueil")
 
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
@@ -24,7 +23,6 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Options de cache" do
           ul do
             li link_to("Effacer le cache de la barre de navigation", '/admin/dashboard/clear_navbar_cache', method: :post)
-            li link_to("Effacer le cache de la page d'accueil", '/admin/dashboard/clear_home_cache', method: :post)
           end
         end
       end
