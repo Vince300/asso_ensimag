@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     end
 
     def verify_pundit
-      unless request.original_fullpath =~ /^\/admin/
+      unless request.original_fullpath =~ /^\/admin/ or devise_controller?
         verify_authorized
       end
     end
