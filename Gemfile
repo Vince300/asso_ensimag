@@ -65,30 +65,52 @@ gem 'chroma'
 # Pagination
 gem "kaminari"
 
+# Authentication
+gem 'devise', github: 'plataformatec/devise'
+
 # Authorization
 gem 'pundit'
 
+# Bundler
 gem 'bundler'
 
+# Administration interface
 gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'devise', github: 'plataformatec/devise'
+
+# form helper
 gem 'simple_form'
+
+# Bootstrap packages
 gem 'bootstrap-sass', '3.3.5'
 gem 'bootstrap-sass-extras'
+
+# Misc
 gem 'tzinfo-data'
+
+# More validation attributes
 gem 'validates_formatting_of'
 
+# Better error page development
 group :development do
   gem 'binding_of_caller'
   gem 'better_errors'
 end
 
-group :test do
-  gem 'shoulda-matchers'
-  gem 'cucumber-rails', require: false
-  gem 'database_cleaner'
+# Test gems
+group :development, :test do
+  gem 'rspec-rails', '~> 3.1.0'
+  gem 'factory_girl_rails', '~> 4.4.1'
 end
 
+group :test do
+  gem 'ffaker', '~> 2.1.0'
+  gem 'capybara', '~> 2.4.4'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver', '~> 2.43.0'
+end
+
+# For deployment on Heroku
 group :production do
   gem 'rails_12factor'
 end
