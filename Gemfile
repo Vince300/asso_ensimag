@@ -59,6 +59,12 @@ gem 'actionview-encoded_mail_to'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 
+# Date validation
+gem 'date_validator'
+
+# URL validation
+gem 'validate_url'
+
 # Color manipulation
 gem 'chroma'
 

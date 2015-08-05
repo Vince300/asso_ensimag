@@ -45,4 +45,10 @@ class User < ActiveRecord::Base
   def self.sample(count)
     self.order(APP_CONFIG['random_order_function']).limit(count)
   end
+
+  # Validation attributes
+  validates :username, :description, presence: true
+  validates :color, color: true
+  validates :order, uniqueness: true
+  validates :site_url, :facebook_url, url: { allow_nil: true, message: I18n.t('errors.messages.url') }
 end

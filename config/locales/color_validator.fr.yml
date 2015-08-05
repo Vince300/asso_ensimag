@@ -1,0 +1,4 @@
+fr:
+  errors:
+    messages:
+      color: "doit être une couleur HTML au format hexadécimal (#XXXXXX)"

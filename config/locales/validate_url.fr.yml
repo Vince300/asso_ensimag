@@ -1,0 +1,4 @@
+fr:
+  errors:
+    messages:
+      url: n'est pas un lien valide

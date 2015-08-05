@@ -23,4 +23,8 @@ class BlogPost < ActiveRecord::Base
 
   # Pagination using kaminari
   paginates_per 5
+
+  # Validation attributes
+  validates :title, :summary, :body, :author, presence: true
+  validates :published, date: true
 end

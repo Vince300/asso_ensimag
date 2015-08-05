@@ -34,4 +34,10 @@ class Event < ActiveRecord::Base
 
   # Kaminari pagination
   paginates_per 15
+
+  # Validation attributes
+  validates :name, :location, :description, :asso, presence: true
+  validates :start_time, date: true
+  validates :end_time, date: { after: :start_time }
+  validates :facebook_url, url: { allow_nil: true, message: I18n.t('errors.messages.url') }
 end

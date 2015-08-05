@@ -7,3 +7,39 @@ fr:
       mark: '*'
     error_notification:
       default_message: "Des erreurs ont été détectées, veuillez les corriger avant de réessayer."
+    labels:
+      user:
+        email: Adresse e-mail
+        current_password: Mot de passe actuel
+        password: Nouveau mot de passe
+        password_confirmation: Confirmation du mot de passe
+        username: Nom de l'association
+        description: Description de l'association
+        site_url: Adresse du site web
+        facebook_url: Adresse du compte Facebook
+        color: Couleur de l'association
+      blog_post:
+        title: Titre
+        published: Date de publication
+        summary: Résumé
+        body: Contenu de l'article
+      event:
+        name: Nom
+        start_time: Heure et date de début
+        end_time: Heure et date de fin
+        location: Emplacement
+        facebook_url: Lien vers la page de l'évènement Facebook
+        description: Description
+    hints:
+      user:
+        site_url: Laisser vide pour masquer.
+        facebook_url: Lien complet vers la page Facebook. Laisser vide pour masquer.
+        current_password: Votre mot de passe actuel est requis pour confirmer les modifications
+        edit:
+          password: Laisser vide pour garder le mot de passe actuel
+      event:
+        facebook_url: Laisser vide pour ne pas afficher de lien.
+      blog_post:
+        published: |
+          Définissez la date à laquelle l'article sera publié.
+          Si vide, la date de publication sera définie lors de l'enregistrement de l'article.
