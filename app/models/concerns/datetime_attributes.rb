@@ -1,4 +1,6 @@
-module DatetimeAttributesHelper
+module DatetimeAttributes
+  extend ActiveSupport::Concern
+
   module ClassMethods
     def datetime_attribute(*attribute_names)
       attribute_names.each do |attribute_name|
@@ -9,9 +11,5 @@ module DatetimeAttributesHelper
                     return dt.strftime("%Y-%m-%d %H:%M") })
       end
     end
-  end
-
-  def self.included(base)
-    base.extend(ClassMethods)
   end
 end

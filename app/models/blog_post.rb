@@ -12,7 +12,7 @@ class BlogPost < ActiveRecord::Base
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
 
   # Fix for published time formatting
-  include DatetimeAttributesHelper
+  include DatetimeAttributes
   datetime_attribute :published
 
   # Pagination using kaminari

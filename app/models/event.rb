@@ -27,7 +27,7 @@ class Event < ActiveRecord::Base
   end
 
   # Fix for published time formatting
-  include DatetimeAttributesHelper
+  include DatetimeAttributes
   datetime_attribute :start_time, :end_time
 
   # Kaminari pagination
