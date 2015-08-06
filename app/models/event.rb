@@ -24,6 +24,10 @@ class Event < ActiveRecord::Base
     DateTime.now > end_time
   end
 
+  def coming?
+    DateTime.now < start_time
+  end
+
   def duration
     end_time - start_time
   end
