@@ -13,9 +13,25 @@ end
 r = Rails.root.join('db', 'seeds', e)
 
 # Load the fixtures
-ActiveRecord::FixtureSet.create_fixtures(r, class_names)
+ActiveRecord::Base.transaction do
+  ActiveRecord::FixtureSet.create_fixtures(r, class_names)
 
-# Apply save method to all classes
-class_names.map { |s| s.to_s.classify.constantize } .each do |cls|
-  cls.find_each(&:save)
+  # Apply save method to all classes
+  invalid_models = []
+
+  class_names.map { |s| s.to_s.classify.constantize } .each do |cls|
+    cls.all.each do |model|
+      unless model.valid?
+        invalid_models << model
+      else
+        model.save
+      end
+    end
+  end
+
+  if invalid_models.length > 0
+    puts "Invalid models have been found:"
+    puts invalid_models.inspect
+    raise "Aborted database seeding"
+  end
 end
