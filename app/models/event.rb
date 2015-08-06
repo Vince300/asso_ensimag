@@ -37,5 +37,5 @@ class Event < ActiveRecord::Base
   validates :name, :location, :description, :asso, presence: true
   validates :start_time, date: true
   validates :end_time, date: { after: :start_time }
-  validates :facebook_url, url: { allow_nil: true, message: I18n.t('errors.messages.url') }
+  validates :facebook_url, url: { allow_nil: true, allow_blank: true, message: I18n.t('errors.messages.url') }
 end
