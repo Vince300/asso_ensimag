@@ -1,7 +1,11 @@
 class UserPolicy < ApplicationPolicy
 
   def edit?
-    true # As current_user can edit the current_user, always
+    not user.nil? # As current_user can edit the current_user, always
+  end
+
+  def update?
+    not user.nil? # See above
   end
 
   class Scope < Scope

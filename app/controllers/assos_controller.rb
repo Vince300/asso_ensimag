@@ -17,10 +17,13 @@ class AssosController < ApplicationController
 
   # GET /asso/:id/edit
   def edit
+    authorize_asso
   end
 
   # PUT /asso/:id
   def update
+    authorize_asso
+
     if @asso.update(asso_params)
       redirect_to asso_path(@asso), flash: { notice: "Les modifications ont été enregistrées" }
     else
@@ -35,5 +38,9 @@ class AssosController < ApplicationController
 
     def asso_params
       params[:user].permit(:description, :facebook_url, :site_url, :color)
+    end
+
+    def authorize_asso
+      authorize @asso
     end
 end
