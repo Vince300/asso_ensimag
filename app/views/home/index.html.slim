@@ -27,7 +27,8 @@ header#homeCarousel.carousel.slide data-ride="carousel"
       .text-center
         em Aucun évènement à venir
     - else
-      - @events.each do |event|
+      - @events.each_with_index do |event, i|
+        - break if i > 1
         .col-md-4.img-portfolio
           = link_to event_path(event) do
             img.img-responsive.img-hover src="http://placehold.it/700x300"
@@ -41,12 +42,17 @@ header#homeCarousel.carousel.slide data-ride="carousel"
               = " #{event.location}"
           p= descriptive_blob(event)
           em.faded Organisé par #{link_to event.asso.username, asso_events_path(event.asso)}
-      - if @events.length > 1
+      - if @events.length == 1
+        .col-md-4.img-portfolio
+      - if @events.length > 2
         .col-md-4.img-portfolio
           = link_to events_path do
             img.img-responsive.img-hover src="http://placehold.it/700x300&text=..."
           h3
             = link_to "Tous les events", events_path
+      - else
+        .col-md-4.text-center
+          em Aucun autre évènement à venir
   .row
     h1.page-header Quelques assos
     - @assos.each do |asso|
