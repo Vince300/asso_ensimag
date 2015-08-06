@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804175639) do
+ActiveRecord::Schema.define(version: 20150806141142) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -38,14 +38,12 @@ ActiveRecord::Schema.define(version: 20150804175639) do
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "slug"
   end
 
   add_index "blog_posts", ["author_id"], name: "index_blog_posts_on_author_id"
 
   create_table "events", force: true do |t|
     t.string   "name"
-    t.string   "slug"
     t.datetime "start_time"
     t.datetime "end_time"
     t.string   "location"

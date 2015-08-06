@@ -30,17 +30,16 @@ class BlogPostsController < ApplicationController
 
   # POST /posts
   def create
-    @post = BlogPost.create(blog_post_params)
-    @post.slug = nil
+    @post = BlogPost.new(blog_post_params)
 
     # Ensure the author has been set
     @post.author = current_user
+    # Same for the published datetime
+    @post.published ||= DateTime.now
 
     # Authorize the post
     authorize_post
 
-    # Same for the published datetime
-    @post.published ||= DateTime.now
     # Save the post
     if @post.save
       redirect_to blog_post_path(@post), flash: { notice: "L'article a été créé avec succès " }

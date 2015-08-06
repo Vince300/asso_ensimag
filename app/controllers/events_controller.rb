@@ -69,8 +69,7 @@ class EventsController < ApplicationController
 
   # POST /events
   def create
-    @event = Event.create(event_params)
-    @event.slug = nil
+    @event = Event.new(event_params)
 
     # Users can only update their own events, so the current_user is the owner
     # of this event
