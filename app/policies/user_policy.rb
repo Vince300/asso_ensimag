@@ -1,11 +1,15 @@
 class UserPolicy < ApplicationPolicy
 
   def edit?
-    not user.nil? # As current_user can edit the current_user, always
+    base?
   end
 
   def update?
-    not user.nil? # See above
+    base?
+  end
+
+  def base?
+    not user.nil? and user == record
   end
 
   class Scope < Scope
