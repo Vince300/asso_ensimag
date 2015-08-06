@@ -55,6 +55,12 @@ describe Event do
     expect(event).to be_valid
   end
 
+  it "is valid with a blank facebook_url" do
+    event = build(:event, facebook_url: "")
+
+    expect(event).to be_valid
+  end
+
   it "is invalid with an invalid facebook_url" do
     event = build(:event, facebook_url: "potato")
     event.valid?

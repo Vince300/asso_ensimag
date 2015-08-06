@@ -57,7 +57,12 @@ describe User do
 
   it "is valid without a site url" do
     user = build(:user, site_url: nil)
-    user.valid?
+
+    expect(user).to be_valid
+  end
+
+  it "is valid with a blank site url" do
+    user = build(:user, site_url: "")
 
     expect(user).to be_valid
   end
@@ -71,7 +76,12 @@ describe User do
 
   it "is valid without a facebook url" do
     user = build(:user, facebook_url: nil)
-    user.valid?
+
+    expect(user).to be_valid
+  end
+
+  it "is valid with a blank facebook url" do
+    user = build(:user, facebook_url: "")
 
     expect(user).to be_valid
   end
