@@ -14,8 +14,14 @@
 
   .row
     .col-md-9
+      - has_seen_events = false
       - @events.each do |event|
-        = render partial: "event_item", locals: { event: event, hide_asso: false }
-      = paginate @events
+        - has_seen_events = true
+        = render partial: "event_item", locals: {event: event, hide_asso: false }
+      - if has_seen_events
+        = paginate @events
+      - else
+        .text-center
+          em Aucun event à venir
     .col-md-3
       = render partial: "events_sidebar"
