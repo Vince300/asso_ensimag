@@ -1,14 +1,9 @@
 class UserPolicy < ApplicationPolicy
-
-  def edit?
-    base?
+  def detail?
+    true
   end
 
   def update?
-    base?
-  end
-
-  def base?
     not user.nil? and user == record
   end
 

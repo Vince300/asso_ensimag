@@ -1,6 +1,6 @@
 class BlogPostPolicy < ApplicationPolicy
   def create?
-    can?
+    not user.nil?
   end
 
   def update?

@@ -1,6 +1,6 @@
 class EventPolicy < ApplicationPolicy
   def create?
-    can?
+    not user.nil?
   end
 
   def update?
