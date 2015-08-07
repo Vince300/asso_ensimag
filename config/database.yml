@@ -22,3 +22,9 @@ test:
 
 production:
   adapter: postgresql
+  encoding: unicode
+  database: asso-ensimag
+  pool: 5
+  username: assoensimag
+  password: pta28t42    
+
