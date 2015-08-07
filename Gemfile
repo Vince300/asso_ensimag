@@ -113,9 +113,3 @@ group :test do
   gem 'selenium-webdriver', '~> 2.43.0'
 end
 
-# For deployment on Heroku
-group :production do
-  # gem 'rails_12factor'
-end
-
-ruby "2.0.0"
