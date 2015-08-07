@@ -42,7 +42,7 @@ class BlogPostsController < ApplicationController
 
     # Save the post
     if @post.save
-      redirect_to blog_post_path(@post), flash: { notice: "L'article a été créé avec succès " }
+      redirect_to blog_post_path(@post), flash: { notice: "L'article a été créé avec succès" }
     else
       render action: 'new'
     end
