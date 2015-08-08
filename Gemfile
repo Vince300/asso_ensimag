@@ -103,9 +103,12 @@ group :development do
 end
 
 # Test gems
-group :test do
+group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
   gem 'factory_girl_rails', '~> 4.4.1'
+end
+
+group :test do
   gem 'ffaker', '~> 2.1.0'
   gem 'capybara', '~> 2.4.4'
   gem 'database_cleaner'
