@@ -26,5 +26,6 @@ production:
   database: asso-ensimag
   pool: 5
   username: assoensimag
-  password: pta28t42    
+  password: pta28t42
+  host: localhost
 
