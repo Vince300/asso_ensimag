@@ -49,6 +49,17 @@ $ ->
       $(this).colorpicker
         align: 'left'
         format: 'hex'
+    $('.btn-file :file').on 'change', (event) ->
+      input = $(this)
+      txtInput = input.parents('.input-group').find(':text')
+      txtInput.val input.val()
+    $('.btn-clear').click (event) ->
+      btn = $(this)
+      prnt = btn.parents('.input-group')
+      input = prnt.find('.btn-file :file')
+      txtInput = prnt.find(':text')
+      input.val null
+      txtInput.val null
 
   $(document).ready(init_editors)
   $(document).on('page:load', init_editors)

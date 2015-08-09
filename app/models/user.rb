@@ -36,6 +36,9 @@ class User < ActiveRecord::Base
   # Event relation
   has_many :events, class_name: 'Event', foreign_key: 'asso_id'
 
+  # Asso picture
+  mount_uploader :picture, AssoPictureUploader
+
   # Gets the next event
   def next_event
     @next_event ||= events.coming.first

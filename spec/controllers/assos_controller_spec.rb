@@ -116,7 +116,7 @@ describe AssosController do
           context "with valid data" do
             it "redirects to the asso page" do
               patch :update, id: asso.id, user: asso_attributes
-              expect(response).to redirect_to(asso_path(asso))
+              expect(response).to redirect_to(detail_asso_path(asso))
             end
 
             it "updates the model attributes" do

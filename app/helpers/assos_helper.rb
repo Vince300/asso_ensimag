@@ -5,7 +5,7 @@ module AssosHelper
     return policy(item).edit?
   end
 
-  def descriptive_blob(asso, len = 100)
+  def descriptive_blob(asso, len = 150)
     truncate (markdown_plain(asso.description) or "Pas de description"), length: len
   end
 end

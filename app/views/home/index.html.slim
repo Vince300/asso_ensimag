@@ -55,15 +55,8 @@ header#homeCarousel.carousel.slide data-ride="carousel"
           em Aucun autre évènement à venir
   .row
     h1.page-header Quelques assos
-    - @assos.each do |asso|
-      .row
-        .col-md-7
-          = link_to asso_path(asso) do
-            img.img-responsive.img-hover src="http://placehold.it/900x300"
-        .col-md-5
-          h3= link_to asso.username, asso_path(asso)
-          p= descriptive_blob(asso, 400)
-          = link_to "En savoir plus", asso_path(asso), class: "btn btn-default btn-block"
-      hr
+    .row
+      - @assos.each do |asso|
+        = render partial: 'assos/asso_item', locals: { asso: asso }
     .row
       = link_to "Toutes les assos", assos_path, class: "btn btn-block btn-primary btn-lg"

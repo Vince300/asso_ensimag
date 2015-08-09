@@ -18,6 +18,7 @@ fr:
         site_url: Adresse du site web
         facebook_url: Adresse du compte Facebook
         color: Couleur de l'association
+        picture: Image de l'association
       blog_post:
         title: Titre
         published: Date de publication
@@ -35,6 +36,7 @@ fr:
         site_url: Laisser vide pour masquer.
         facebook_url: Lien complet vers la page Facebook. Laisser vide pour masquer.
         current_password: Votre mot de passe actuel est requis pour confirmer les modifications
+        picture: "Taille recommandée : 700x300. Laisser vide pour conserver l'image actuelle."
         edit:
           password: Laisser vide pour garder le mot de passe actuel
       event:

@@ -25,7 +25,7 @@ class AssosController < ApplicationController
     authorize_asso
 
     if @asso.update(asso_params)
-      redirect_to asso_path(@asso), flash: { notice: "Les modifications ont été enregistrées" }
+      redirect_to detail_asso_path(@asso), flash: { notice: "Les modifications ont été enregistrées" }
     else
       render action: 'edit'
     end
@@ -37,7 +37,7 @@ class AssosController < ApplicationController
     end
 
     def asso_params
-      params[:user].permit(:description, :facebook_url, :site_url, :color)
+      params[:user].permit(:description, :facebook_url, :site_url, :color, :picture)
     end
 
     def authorize_asso
