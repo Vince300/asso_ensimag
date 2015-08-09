@@ -46,3 +46,9 @@ namespace :deploy do
   end
 
 end
+
+task :remove_gemfile_lock do
+  run "rm -f #{release_path}/Gemfile.lock"
+end
+
+before "bundler:install", "remove_gemfile_lock"

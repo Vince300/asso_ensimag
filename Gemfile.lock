@@ -326,6 +326,7 @@ DEPENDENCIES
   bootstrap-sass-extras
   bootstrap3-datetimepicker-rails (~> 4.14.30)
   bundler
+  capistrano-bundler
   capistrano-passenger
   capistrano-rails
   capybara (~> 2.4.4)
