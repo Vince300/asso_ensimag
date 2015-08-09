@@ -10,3 +10,13 @@ fr:
       next: "&gt;"
       last: "&raquo;"
       truncate: "&hellip;"
+  http_errors:
+    "403":
+      title: Accès refusé
+      description: Vous n'avez pas les droits suffisants pour accéder à cette page.
+    "404":
+      title: Page non trouvée
+      description: La page que vous avez demandée est introuvable.
+    "500":
+      title: Erreur interne
+      description: Le serveur a rencontré une erreur lors du traitement de votre requête.

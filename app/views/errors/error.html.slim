@@ -1,0 +1,8 @@
+.container
+  .row
+    h1.page-header= title t("http_errors.#{@error_status}.title")
+
+  .row
+    p= t("http_errors.#{@error_status}.description")
+    .text-center
+      a onclick="javascript:history.back();event.preventDefault()" href="#{root_path}" class="btn btn-default btn-block" < Retour
