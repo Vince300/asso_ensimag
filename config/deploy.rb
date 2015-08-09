@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'asso-ensimag'
-set :repo_url, 'root@173.214.168.34:/var/git/asso-ensimag'
+set :repo_url, '/var/git/asso-ensimag'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
