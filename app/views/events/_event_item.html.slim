@@ -1,7 +1,7 @@
 .row
   .col-md-8
     = link_to event_path(event) do
-      img.img-responsive.img-hover src="http://placehold.it/700x300"
+      img.img-responsive.img-hover src="#{event.picture.list}"
   .col-md-4
     h3= event.name
     .faded

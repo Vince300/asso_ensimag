@@ -33,6 +33,8 @@ class Event < ActiveRecord::Base
   # Kaminari pagination
   paginates_per 15
 
+  mount_uploader :picture, EventPictureUploader
+
   # Validation attributes
   validates :name, :location, :description, :asso, presence: true
   validates :start_time, date: true

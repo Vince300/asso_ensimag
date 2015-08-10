@@ -32,6 +32,7 @@ fr:
         location: Emplacement
         facebook_url: Lien vers la page de l'évènement Facebook
         description: Description
+        picture: Photo de l'évènement
     hints:
       user:
         site_url: Laisser vide pour masquer.
@@ -41,9 +42,10 @@ fr:
         edit:
           password: Laisser vide pour garder le mot de passe actuel
       event:
+        picture: "Taille recommandée : 1920px, format 16:9. Laisser vide pour conserver l'image actuelle."
         facebook_url: Laisser vide pour ne pas afficher de lien.
       blog_post:
-        picture: "Taille recommandée : 1920px, format 16:9. Laisser vide pour conserver l'image actuelle. L'image de l'association sera utilisée si aucune image n'est spécifiée."
+        picture: "Taille recommandée : 710px, format 16:9. Laisser vide pour conserver l'image actuelle. L'image de l'association sera utilisée si aucune image n'est spécifiée."
         published: |
           Définissez la date à laquelle l'article sera publié.
           Si vide, la date de publication sera définie lors de l'enregistrement de l'article.

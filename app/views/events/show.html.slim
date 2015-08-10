@@ -38,6 +38,6 @@
       = render partial: "assos/social_block", locals: { asso: @event.asso }
       = render partial: "assos/about_block", locals: { asso: @event.asso }
     .col-lg-8
-      img.img-responsive src="http://placehold.it/700x300"
+      img.img-responsive src="#{@event.picture}"
       hr
       = markdown(@event.description)
