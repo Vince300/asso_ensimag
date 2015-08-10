@@ -33,6 +33,7 @@ fr:
         facebook_url: Lien vers la page de l'évènement Facebook
         description: Description
         picture: Photo de l'évènement
+        published: Date de publication de l'évènement
     hints:
       user:
         site_url: Laisser vide pour masquer.
@@ -44,6 +45,7 @@ fr:
       event:
         picture: "Taille recommandée : 1920px, format 16:9. Laisser vide pour conserver l'image actuelle."
         facebook_url: Laisser vide pour ne pas afficher de lien.
+        published: Date à partir de laquelle l'évènement sera rendu publique.
       blog_post:
         picture: "Taille recommandée : 710px, format 16:9. Laisser vide pour conserver l'image actuelle. L'image de l'association sera utilisée si aucune image n'est spécifiée."
         published: |

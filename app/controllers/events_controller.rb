@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
   # GET /events(/page/:page)
   def index
-    @events = Event.coming.page(params[:page])
+    @events = Event.coming.published(current_user).page(params[:page])
   end
 
   # GET /events/calendar
@@ -16,8 +16,8 @@ class EventsController < ApplicationController
         if params[:to] and params[:from]
           date_to = DateTime.strptime(params[:to], '%Q')
           date_from = DateTime.strptime(params[:from], '%Q')
-          @events = Event.where('start_time >= :start OR end_time <= :end OR (start_time < :start AND end_time > :end)',
-                                start: date_from, end: date_to)
+          @events = Event.published(current_user).where('start_time >= :start OR end_time <= :end OR (start_time < :start AND end_time > :end)',
+                                                        start: date_from, end: date_to)
           @success = 1
         else
           @success = 0
@@ -33,10 +33,10 @@ class EventsController < ApplicationController
     @asso = User.friendly.find(params[:id])
 
     if params[:passed]
-      @events = @asso.events.passed
+      @events = @asso.events.passed.published(current_user)
       @passed_events = true
     else
-      @events = @asso.events.coming
+      @events = @asso.events.coming.published(current_user)
       @passed_events = false
     end
 
@@ -75,6 +75,9 @@ class EventsController < ApplicationController
     # of this event
     @event.asso = current_user
 
+    # Set published datetime
+    @event.published ||= DateTime.now
+
     # Authorize the event
     authorize_event
 
@@ -90,7 +93,11 @@ class EventsController < ApplicationController
     # Authorize the event
     authorize_event
 
-    if @event.update(event_params)
+    # Verify update params
+    upd_params = event_params
+    upd_params[:published] = DateTime.now if upd_params[:published].empty?
+
+    if @event.update(upd_params)
       redirect_to @event, notice: "L'évènement a été mis à jour avec succès."
     else
       render :edit
@@ -108,11 +115,11 @@ class EventsController < ApplicationController
 
   private
     def set_event
-      @event = Event.find(params[:id])
+      @event = Event.published(current_user).find(params[:id])
     end
 
     def event_params
-      params[:event].permit(:name, :start_time, :end_time, :location, :description, :facebook_url, :picture)
+      params[:event].permit(:name, :published, :start_time, :end_time, :location, :description, :facebook_url, :picture)
     end
 
     def authorize_event

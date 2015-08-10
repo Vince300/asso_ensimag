@@ -6,7 +6,11 @@ class BlogPost < ActiveRecord::Base
   default_scope -> { order(published: :desc) }
 
   # Only published blog posts
-  scope :published, -> { where('published <= ?', DateTime.now) }
+  scope :published, -> (user = nil) { if user.nil?
+                                        where('published <= ?', DateTime.now)
+                                      else
+                                        where('author_id = :id OR published <= :date', id: user.id, date: DateTime.now)
+                                      end }
 
   # Author relation
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'

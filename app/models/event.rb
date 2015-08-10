@@ -10,6 +10,13 @@ class Event < ActiveRecord::Base
   # Fetches the events ordered by their start_time
   scope :ordered, -> { order(start_time: :desc) }
 
+  # Returns only published events
+  scope :published, -> (user = nil) { if user.nil?
+                                        where('published <= ?', DateTime.now)
+                                      else
+                                        where('asso_id = :id OR published <= :date', id: user.id, date: DateTime.now)
+                                      end }
+
   # Relation to users
   belongs_to :asso, class_name: 'User', foreign_key: 'asso_id'
 

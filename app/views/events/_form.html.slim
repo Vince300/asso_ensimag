@@ -3,6 +3,7 @@
     = f.error_notification
     .form-inputs
       = f.input :name, required: true
+      = f.input :published, as: :date_time_picker, required: true
       = f.input :start_time, as: :date_time_picker, required: true
       = f.input :end_time, as: :date_time_picker, required: true
       = f.input :location, required: true

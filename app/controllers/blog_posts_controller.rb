@@ -91,7 +91,7 @@ class BlogPostsController < ApplicationController
 
     def set_blog_post
       # Find blog post
-      @post = BlogPost.find(params[:id])
+      @post = BlogPost.published(current_user).find(params[:id])
       @asso = @post.author
     end
 
