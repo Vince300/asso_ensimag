@@ -1,6 +1,6 @@
 cercle:
   username: Cercle
-  email: cercle@asso-ensimag.fr
+  email: cercle.ensimag@gmail.com
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
   order: 0
   facebook_url: https://www.facebook.com/cercle.imag
