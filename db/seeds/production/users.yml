@@ -3,7 +3,6 @@ cercle:
   email: cercle@asso-ensimag.fr
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
   order: 0
-  site_url: http://ensimag-b.de/
   facebook_url: https://www.facebook.com/cercle.imag
   color: "#024902"
   description: |
@@ -29,6 +28,7 @@ bds:
   email: bds@asso-ensimag.fr
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
   order: 1
+  facebook_url: https://www.facebook.com/bds.ensimag
   color: "#008A43"
   description: |
     Le BDS est l’asso qui se charge de te faire bouger pendant ton séjour à l’Imag ! Ils proposent des événements sportifs dont le fameux Week-End Ski (WES).
@@ -39,6 +39,7 @@ bda:
   email: bda@asso-ensimag.fr
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
   order: 2
+  facebook_url: https://www.facebook.com/bda.ensimag
   color: "#006838"
   description: |
     L’association qui cherche à faire ressortir l’artiste qui est en toi ! Leurs événements sont (logiquement) axés art et culture, comme le Global Village où les participants ramènent des spécialités culinaires de chez eux pour les partager.
@@ -48,7 +49,8 @@ polecom:
   username: Pôle com'
   email: polecom@asso-ensimag.fr
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
-  order: 4
+  order: 3
+  facebook_url: https://www.facebook.com/polecom.ensimag
   color: "#669933"
   description: |
     Le Pôle Communication de l’Ensimag s’assure que tu n’oublieras pas tes années à l’école… en les immortalisant ;-) L’appareil sous le bras, ils bravent les conditions extrêmes des Kfets et Soirées pour figer à jamais les différents moments de ta vie d’étudiant.
@@ -56,9 +58,19 @@ polecom:
     Le Pôle Com’ édite aussi le Post’IT, journal des étudiants de l’Ensimag, dont tu as reçu un premier exemplaire dans ton welcome-pack !
 gaming:
   username: Ensimag gaming
-  email: gaming@asso-ensimag.fr
+  email: ensimag.gaming@gmail.com
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
-  order: 6
+  order: 4
+  facebook_url: https://www.facebook.com/profile.php?id=100004149677218
   color: "#3d3d3d"
+  description: |
+    A rédiger :-)
+je:
+  username: Nsigma
+  email: nsigma@nsigma.fr
+  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  order: 5
+  facebook_url: https://www.facebook.com/nsigma.ensimag
+  color: "#01A300"
   description: |
     A rédiger :-)
