@@ -5,7 +5,7 @@ header#homeCarousel.carousel.slide data-ride="carousel"
   .carousel-inner
     - @posts.each_with_index do |post, i|
       div class=(if i == 0 then 'item active' else 'item' end)
-        .fill style="background-image:url('http://placehold.it/1920x300&text=Slide+#{i}');"
+        .fill style="background-image:url('#{post.picture.homepage}');"
         .carousel-caption
           = link_to blog_post_path(post)
             h2= post.title

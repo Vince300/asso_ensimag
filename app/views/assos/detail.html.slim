@@ -11,7 +11,7 @@
 
   .row
     .col-md-8
-      = image_tag @asso.picture.detail, class: "img-responsive center-block"
+      img.img-responsive.center-block src="#{@asso.picture}"
       hr
       = markdown(@asso.description) or "Cette association n'a pas encore édité sa description."
     .col-md-4

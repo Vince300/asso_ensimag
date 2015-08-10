@@ -18,6 +18,9 @@ class BlogPost < ActiveRecord::Base
   # Pagination using kaminari
   paginates_per 5
 
+  # Blog post picture
+  mount_uploader :picture, BlogPostPictureUploader
+
   # Validation attributes
   validates :title, :summary, :body, :author, presence: true
   validates :published, date: true

@@ -20,6 +20,7 @@ fr:
         color: Couleur de l'association
         picture: Image de l'association
       blog_post:
+        picture: Photo de l'article
         title: Titre
         published: Date de publication
         summary: Résumé
@@ -36,12 +37,13 @@ fr:
         site_url: Laisser vide pour masquer.
         facebook_url: Lien complet vers la page Facebook. Laisser vide pour masquer.
         current_password: Votre mot de passe actuel est requis pour confirmer les modifications
-        picture: "Taille recommandée : 700x300. Laisser vide pour conserver l'image actuelle."
+        picture: "Taille recommandée : 1920px, format 16:9. Laisser vide pour conserver l'image actuelle."
         edit:
           password: Laisser vide pour garder le mot de passe actuel
       event:
         facebook_url: Laisser vide pour ne pas afficher de lien.
       blog_post:
+        picture: "Taille recommandée : 1920px, format 16:9. Laisser vide pour conserver l'image actuelle. L'image de l'association sera utilisée si aucune image n'est spécifiée."
         published: |
           Définissez la date à laquelle l'article sera publié.
           Si vide, la date de publication sera définie lors de l'enregistrement de l'article.

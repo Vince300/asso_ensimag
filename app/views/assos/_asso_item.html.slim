@@ -1,5 +1,5 @@
 .col-md-4.img-portfolio
-  a href=asso_path(asso)
-    = image_tag asso.picture.list, class: "img-responsive img-hover"
+  = link_to asso_path(asso) do
+    img.img-responsive.img-hover.center-block src="#{asso.picture.list}"
   h3= link_to asso.username, asso_path(asso)
   p= descriptive_blob(asso)

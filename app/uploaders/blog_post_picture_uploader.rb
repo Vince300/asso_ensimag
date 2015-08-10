@@ -1,6 +1,6 @@
 require 'carrierwave/processing/mini_magick'
 
-class AssoPictureUploader < CarrierWave::Uploader::Base
+class BlogPostPictureUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Store to filesystem
@@ -14,23 +14,18 @@ class AssoPictureUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-    pth = if version_name == :homepage
-            "fallback/homepage_asso.png"
-          else
-            "fallback/asso.png"
-          end
-    return ActionController::Base.helpers.asset_path(pth)
+    model.author.picture_url(version_name)
   end
 
   process :quality => 90
   process :resize_to_limit => [ 1920, 1440 ]
 
-  # Enforce aspect ratio for asso list
+  # Enforce aspect ratio for article list (crop/scale)
   version :list do
     process :resize_to_fill => [ 710, 400 ]
   end
 
-  # Specific homepage large version
+  # Homepage version, fills the entire screen (crop/scale)
   version :homepage do
     process :resize_to_fill => [ 1920, 400 ]
   end
@@ -40,4 +35,11 @@ class AssoPictureUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %w(jpg jpeg png)
   end
+
+  # Override the filename of the uploaded files:
+  # Avoid using model.id or version_name here, see uploader/store.rb for details.
+  # def filename
+  #   "something.jpg" if original_filename
+  # end
+
 end

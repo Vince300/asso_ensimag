@@ -2,7 +2,7 @@
   .row
     h1.page-header
       = title @post.title
-      small Par #{link_to @asso.username, asso_path(@asso)}
+      small Par #{link_to @asso.username, asso_path(@asso)} le #{time_tag @post.published}
     ol.breadcrumb
       li= link_to "Accueil", root_path
       li= link_to "Associations", assos_path
@@ -11,13 +11,7 @@
 
   .row
     .col-lg-8
-      hr
-      p
-        = fa_icon "clock-o"
-        = " Le "
-        = time_tag @post.published
-      hr
-      img.img-responsive src="http://placehold.it/900x300"
+      img.img-responsive.center-block src="#{@post.picture}"
       hr
       .lead
         = markdown(@post.summary)

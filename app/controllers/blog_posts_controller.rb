@@ -96,7 +96,7 @@ class BlogPostsController < ApplicationController
     end
 
     def blog_post_params
-      params[:blog_post].permit(:title, :published, :summary, :body)
+      params[:blog_post].permit(:title, :published, :summary, :body, :picture)
     end
 
     def authorize_post
