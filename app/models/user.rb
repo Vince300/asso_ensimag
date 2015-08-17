@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
   end
 
   # Validation attributes
-  validates :username, :description, presence: true
+  validates :username, presence: true
   validates :color, color: true
   validates :order, uniqueness: true
   validates :site_url, :facebook_url, url: { allow_nil: true, allow_blank: true, message: I18n.t('errors.messages.url') }

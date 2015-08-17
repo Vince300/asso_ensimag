@@ -44,3 +44,28 @@ task :remove_gemfile_lock do
 end
 
 before "bundler:install", "remove_gemfile_lock"
+
+# Local asset precompilation
+namespace :deploy do
+  namespace :assets do
+
+    Rake::Task['deploy:assets:precompile'].clear_actions
+
+    desc 'Precompile assets locally and upload to servers'
+    task :precompile do
+      system('rake assets:precompile RAILS_ENV=production')
+
+      on release_roles(fetch(:assets_roles)) do
+        within release_path do
+          with rails_env: fetch(:rails_env) do
+            old_manifest_path = "#{shared_path}/public/assets/manifest*"
+            execute :rm, old_manifest_path if test "[ -f #{old_manifest_path} ]"
+            upload!('./public/assets/', "#{shared_path}/public/", recursive: true)
+          end
+        end
+      end
+
+      system('rm -rf public/assets')
+    end
+  end
+end
