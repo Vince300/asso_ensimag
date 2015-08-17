@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
   # Associations list
   get 'assos' => 'assos#index', as: :assos
 

@@ -7,6 +7,6 @@ hr
 = link_to blog_post_path(post) do
   img.img-responsive.img-hover.center-block src="#{post.picture.list}"
 hr
-p= markdown_plain(post.summary)
+p= post.summary
 = link_to "En savoir plus", blog_post_path(post), class: "btn btn-primary"
 hr

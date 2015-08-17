@@ -48,8 +48,8 @@ gem 'devise-i18n'
 gem 'friendly_id', '~> 5.1.0'
 
 # Markdown editor
-gem 'epic-editor-rails'
-gem 'redcarpet'
+gem 'ckeditor'
+gem 'rails-html-sanitizer'
 
 # FontAwesome
 gem 'font-awesome-rails'

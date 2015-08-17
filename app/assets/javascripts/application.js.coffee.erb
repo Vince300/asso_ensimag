@@ -2,39 +2,14 @@
 # = require jquery_ujs
 # = require turbolinks
 # = require bootstrap
-# = require epiceditor
 # = require moment
 # = require moment/fr
 # = require bootstrap-datetimepicker
 # = require bootstrap-colorpicker
+# = require ckeditor/init
 
 $ ->
   init_editors = ->
-    $('.epiceditor textarea').each ->
-      # Add a link to the markdown cheatsheet
-      adiv = $('<p />').addClass('text-right')
-      adiv.append($('<a />').text("Markdown cheatsheet")
-          .attr('href', "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet")
-          .attr('target', '_blank'))
-      $item = $(this)
-      $item.parent().append(adiv)
-      # Wrap the element in a div, wrapped in a div
-      pdiv = $('<div />').addClass('epiceditor-container')
-      $item.wrap(pdiv)
-      $item.parent().wrap($('<div />').addClass('epiceditor-parent'))
-      # Build the editor
-      dv = $item.parent()[0]
-
-      editor = new EpicEditor(
-        container: dv,
-        autogrow: true,
-        clientSideStorage: false,
-        theme:
-          preview: '<%= asset_path("epiceditor/preview.css") %>',
-          editor: '<%= asset_path("epiceditor/editor.css") %>')
-
-      editor.load()
-      editor.reflow()
     $('.form-datetime').each ->
       $this = $(this)
       v = moment($this.find('input').val())

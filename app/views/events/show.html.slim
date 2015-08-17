@@ -40,4 +40,4 @@
     .col-lg-8
       img.img-responsive src="#{@event.picture}"
       hr
-      = markdown(@event.description)
+      = rich_safe(@event.description)

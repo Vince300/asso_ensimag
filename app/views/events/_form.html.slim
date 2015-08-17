@@ -8,7 +8,7 @@
       = f.input :end_time, as: :date_time_picker, required: true
       = f.input :location, required: true
       = f.input :facebook_url, required: false
-      = f.input :description, wrapper_html: { class: 'epiceditor' }
+      = f.input :description, as: :ckeditor, required: true
       = f.input :picture, as: :picture
   .col-md-4
     .well

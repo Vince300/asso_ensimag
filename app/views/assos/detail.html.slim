@@ -13,7 +13,7 @@
     .col-md-8
       img.img-responsive.center-block src="#{@asso.picture}"
       hr
-      = markdown(@asso.description) or "Cette association n'a pas encore édité sa description."
+      = rich_safe(@asso.description) or "Cette association n'a pas encore édité sa description."
     .col-md-4
       = render partial: "action_links", locals: { asso: @asso }
       = render partial: "social_block", locals: { asso: @asso }

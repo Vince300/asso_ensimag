@@ -14,7 +14,7 @@
         = f.input :site_url
         = f.input :facebook_url
         = f.input :color, input_html: { class: 'colorpicker-editor' }
-        = f.input :description, wrapper_html: { class: 'epiceditor' }
+        = f.input :description, as: :ckeditor
         = f.input :picture, as: :picture
       .form-actions
         = f.button :submit, class: 'btn btn-primary'

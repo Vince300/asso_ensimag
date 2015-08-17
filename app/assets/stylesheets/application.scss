@@ -1,14 +1,12 @@
 /*
  *= require_tree .
  *= stub active_admin
- *= stub epiceditor/preview
  *= require font-awesome
  */
 
 @import "bootstrap_configuration";
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "base/epiceditor";
 @import "bootstrap-datetimepicker";
 @import "bootstrap-colorpicker";
 
@@ -87,11 +85,6 @@ h1, h2, h3, h4, h5, h6 {
   small {
     margin-left: ($line-height-computed / 2);
   }
-}
-
-.epiceditor-parent {
-  @extend .form-control;
-  height: auto;
 }
 
 .btn-left-margin {

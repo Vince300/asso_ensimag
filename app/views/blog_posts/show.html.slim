@@ -14,8 +14,8 @@
       img.img-responsive.center-block src="#{@post.picture}"
       hr
       .lead
-        = markdown(@post.summary)
-      = markdown(@post.body)
+        = @post.summary
+      = rich_safe(@post.body)
     .col-md-4
       - if can_edit(@post)
         .well

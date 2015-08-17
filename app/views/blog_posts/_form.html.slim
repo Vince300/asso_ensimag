@@ -4,8 +4,8 @@
     .form-inputs
       = f.input :title,                                          required: true
       = f.input :published, as: :date_time_picker,               required: true
-      = f.input :summary, wrapper_html: { class: 'epiceditor' }, required: true
-      = f.input :body,    wrapper_html: { class: 'epiceditor' }, required: true
+      = f.input :summary,                                        required: true
+      = f.input :body, as: :ckeditor, required: true
       = f.input :picture, as: :picture
   .col-md-4
     .well

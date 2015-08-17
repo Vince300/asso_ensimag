@@ -9,7 +9,7 @@ header#homeCarousel.carousel.slide data-ride="carousel"
         .carousel-caption
           = link_to blog_post_path(post)
             h2= post.title
-            small= truncate markdown_plain(post.summary), length: 50
+            small= truncate post.summary, length: 50
   a.left.carousel-control data-slide="prev" href="#homeCarousel"
     span.icon-prev
   a.right.carousel-control data-slide="next" href="#homeCarousel"
