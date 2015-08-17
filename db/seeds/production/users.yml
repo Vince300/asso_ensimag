@@ -25,8 +25,8 @@ cercle:
     Tu peux contacter le Cercle sur Facebook (compte [Cercle Ensimag](https://www.facebook.com/cercle.imag)) !
 bds:
   username: BDS
-  email: bds@asso-ensimag.fr
-  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  email: ensimagbds@gmail.com
+  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxxd") %>
   order: 1
   facebook_url: https://www.facebook.com/bds.ensimag
   color: "#008A43"
@@ -36,7 +36,7 @@ bds:
     Si tu ne les as pas remarqués pendant l’inté, c’est eux qui ont mis le feu à l’amphi de rentrée et qui trouvent des slogans rassembleurs pour faire la promo de leurs événements ! Ils sont nombreux, portent des vêtements verts foncés avec le logo BDS, et savent mettre l’ambiance en soirée :)
 bda:
   username: BDA
-  email: bda@asso-ensimag.fr
+  email: bda@ensimag.imag.fr
   encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
   order: 2
   facebook_url: https://www.facebook.com/bda.ensimag
