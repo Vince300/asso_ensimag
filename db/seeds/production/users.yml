@@ -5,24 +5,7 @@ cercle:
   order: 0
   facebook_url: https://www.facebook.com/cercle.imag
   color: "#024902"
-  description: |
-    Le Cercle des Élèves Ensimag est ce qu’on appelle ailleurs le BDE, le Bureau des Élèves.
-
-    C’est une association à but non lucratif (loi 1901) qui a pour objectif d’animer la vie de l’école en organisant divers événements tout au long de l’année, comme des repas, des soirées… Le Cercle est aussi là pour te proposer des bons plans, et te concocter une intégration de folie où tu pourras rencontrer les gens de ta promo et te forger de belles amitiés.
-
-    ## Les membres
-    Tous les étudiants inscrits à l’Ensimag sont membres du Cercle des Élèves, mais seuls certains font partie du Conseil d’Administration : ce sont ceux qui staffent en soirée et portent des pulls/polos/t-shirts à l’effigie du Cercle !
-
-    ### Le Bureau
-    * Nicolas : Président
-    * Romain : Vice-président
-    * Thomas : Vice-président
-    * Aymeric : Trésorier
-    * Salah : Vice-trésorier
-    * Gaëtan : Secrétaire
-
-    ### Contacter le Cercle
-    Tu peux contacter le Cercle sur Facebook (compte [Cercle Ensimag](https://www.facebook.com/cercle.imag)) !
+  description:
 bds:
   username: BDS
   email: ensimagbds@gmail.com
@@ -30,10 +13,7 @@ bds:
   order: 1
   facebook_url: https://www.facebook.com/bds.ensimag
   color: "#008A43"
-  description: |
-    Le BDS est l’asso qui se charge de te faire bouger pendant ton séjour à l’Imag ! Ils proposent des événements sportifs dont le fameux Week-End Ski (WES).
-
-    Si tu ne les as pas remarqués pendant l’inté, c’est eux qui ont mis le feu à l’amphi de rentrée et qui trouvent des slogans rassembleurs pour faire la promo de leurs événements ! Ils sont nombreux, portent des vêtements verts foncés avec le logo BDS, et savent mettre l’ambiance en soirée :)
+  description:
 bda:
   username: BDA
   email: bda@ensimag.imag.fr
@@ -41,10 +21,7 @@ bda:
   order: 2
   facebook_url: https://www.facebook.com/bda.ensimag
   color: "#006838"
-  description: |
-    L’association qui cherche à faire ressortir l’artiste qui est en toi ! Leurs événements sont (logiquement) axés art et culture, comme le Global Village où les participants ramènent des spécialités culinaires de chez eux pour les partager.
-
-    Tu les reconnaîtras facilement à leurs vêtements verts foncés arborant leur logo, et c’est eux que tu verras souvent peindre des décorations pour les différentes soirées de l’année, parler cinéma, peinture ou musique, ou inviter le club de bière à leurs soirées pour étancher ta soif…
+  description:
 polecom:
   username: Pôle com'
   email: polecom@asso-ensimag.fr
@@ -52,10 +29,7 @@ polecom:
   order: 3
   facebook_url: https://www.facebook.com/polecom.ensimag
   color: "#669933"
-  description: |
-    Le Pôle Communication de l’Ensimag s’assure que tu n’oublieras pas tes années à l’école… en les immortalisant ;-) L’appareil sous le bras, ils bravent les conditions extrêmes des Kfets et Soirées pour figer à jamais les différents moments de ta vie d’étudiant.
-
-    Le Pôle Com’ édite aussi le Post’IT, journal des étudiants de l’Ensimag, dont tu as reçu un premier exemplaire dans ton welcome-pack !
+  description:
 gaming:
   username: Ensimag gaming
   email: ensimag.gaming@gmail.com
@@ -63,8 +37,7 @@ gaming:
   order: 4
   facebook_url: https://www.facebook.com/profile.php?id=100004149677218
   color: "#3d3d3d"
-  description: |
-    A rédiger :-)
+  description:
 je:
   username: Nsigma
   email: nsigma@nsigma.fr
@@ -72,5 +45,4 @@ je:
   order: 5
   facebook_url: https://www.facebook.com/nsigma.ensimag
   color: "#01A300"
-  description: |
-    A rédiger :-)
+  description:
