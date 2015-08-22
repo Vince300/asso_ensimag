@@ -24,7 +24,7 @@ ActiveAdmin.register BlogPost do
       f.input :author
       f.input :published
       f.input :summary
-      f.input :body
+      f.input :body, as: :ckeditor, input_html: { ckeditor: { 'customConfig' => asset_path('ckeditor/config.js') }}
     end
     f.actions
   end

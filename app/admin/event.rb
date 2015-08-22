@@ -26,7 +26,7 @@ ActiveAdmin.register Event do
       f.input :end_time
       f.input :location
       f.input :facebook_url
-      f.input :description
+      f.input :description, as: :ckeditor, input_html: { ckeditor: { 'customConfig' => asset_path('ckeditor/config.js') }}
     end
     f.actions
   end
