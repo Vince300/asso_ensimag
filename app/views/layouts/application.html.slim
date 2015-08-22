@@ -6,7 +6,7 @@ html
     title= (content_for?(:title) ? content_for(:title) + " - " : "") + "Asso-Ensimag"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = javascript_include_tag '//cdn.ckeditor.com/4.5.2/full/ckeditor.js'
+    = javascript_include_tag '//cdn.ckeditor.com/4.5.2/full/ckeditor.js', 'data-turbolinks-track' => true
     - if content_for? :head
       = content_for :head
     = favicon_link_tag
