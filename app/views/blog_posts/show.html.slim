@@ -11,7 +11,8 @@
 
   .row
     .col-lg-8
-      img.img-responsive.center-block src="#{@post.picture}"
+      = link_to @post.picture.to_s
+        img.img-responsive.center-block src=@post.picture
       hr
       .lead
         = @post.summary

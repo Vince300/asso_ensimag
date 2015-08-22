@@ -38,6 +38,7 @@
       = render partial: "assos/social_block", locals: { asso: @event.asso }
       = render partial: "assos/about_block", locals: { asso: @event.asso }
     .col-lg-8
-      img.img-responsive src="#{@event.picture}"
+      = link_to @event.picture.to_s
+        img.img-responsive.center-block src=@event.picture
       hr
       = rich_safe(@event.description)

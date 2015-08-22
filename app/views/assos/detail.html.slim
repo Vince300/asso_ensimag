@@ -11,7 +11,8 @@
 
   .row
     .col-md-8
-      img.img-responsive.center-block src="#{@asso.picture}"
+      = link_to @asso.picture.to_s
+        img.img-responsive.center-block src=@asso.picture
       hr
       = rich_safe(@asso.description) or "Cette association n'a pas encore édité sa description."
     .col-md-4
