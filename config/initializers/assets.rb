@@ -9,4 +9,4 @@ Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
-Rails.application.config.assets.precompile += %w( ckeditor/* active_admin.js calendar.js bootstrap-colorpicker/* )
+Rails.application.config.assets.precompile += %w( ckeditor/config.js active_admin.js calendar.js bootstrap-colorpicker/* )

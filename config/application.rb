@@ -22,5 +22,10 @@ module AssoEnsimag
 
     # Add lib to autoload_path
     config.autoload_paths += Dir[Rails.root.join('lib')]
+
+    # Remove Ckeditor assets from precompilation
+    config.after_initialize do
+      Rails.application.config.assets.precompile = Rails.application.config.assets.precompile - Ckeditor.assets
+    end
   end
 end
