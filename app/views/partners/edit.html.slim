@@ -1,0 +1,12 @@
+.container
+  .row
+    h1.page-header= title "Edition du partenaire \"#{@partner.name}\""
+    ol.breadcrumb
+      li= link_to "Accueil", root_path
+      li= link_to "Partenaires", partners_path
+      li.active= @partner.name
+
+  .row
+    = render partial: 'form', locals: {partner: @partner,
+                                       form_url: partner_path(@partner),
+                                       form_method: :put}

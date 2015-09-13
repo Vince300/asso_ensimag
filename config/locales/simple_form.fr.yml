@@ -34,6 +34,11 @@ fr:
         description: Description
         picture: Photo de l'évènement
         published: Date de publication de l'évènement
+      partner:
+        name: Nom
+        site_url: Page web
+        description: Description
+        picture: Logo
     hints:
       user:
         site_url: Laisser vide pour masquer.
@@ -46,6 +51,10 @@ fr:
         picture: "Taille recommandée : 1920px, format 16:9. Laisser vide pour conserver l'image actuelle."
         facebook_url: Laisser vide pour ne pas afficher de lien.
         published: Date à partir de laquelle l'évènement sera rendu publique.
+      partner:
+        description: "Courte description du partenariat."
+        site_url: "Page web du partenaire, voire lien direct vers une offre si elle existe."
+        picture: "Taille recommandée : 710x400. Laisser vide pour conserver l'image actuelle."
       blog_post:
         picture: "Taille recommandée : 710px, format 16:9. Laisser vide pour conserver l'image actuelle. L'image de l'association sera utilisée si aucune image n'est spécifiée."
         published: |

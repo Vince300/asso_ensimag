@@ -13,6 +13,14 @@ Rails.application.routes.draw do
   # Asso blog
   resources :blog_posts, path: 'posts'
 
+  # Partners
+  get    'partners'          => 'partners#index', as: :partners
+  post   'partners'          => 'partners#create'
+  put    'partners/:id'      => 'partners#update',  as: :partner
+  delete 'partners/:id'      => 'partners#destroy'
+  get    'partners/new'      => 'partners#new',     as: :new_partner
+  get    'partners/:id/edit' => 'partners#edit',    as: :edit_partner
+
   # Asso events
   get 'events/calendar'             => 'events#calendar',    as: :events_calendar
   get 'asso/:id/events(/page/:page)' => 'events#asso_events', as: :asso_events

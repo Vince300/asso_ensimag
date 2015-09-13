@@ -1,0 +1,18 @@
+= simple_form_for(partner, url: form_url, html: { method: form_method }) do |f|
+  .col-lg-8
+    = f.error_notification
+    .form-inputs
+      = f.input :name,        required: true
+      = f.input :site_url,    required: true
+      = f.input :description, required: true
+      = f.input :picture, as: :picture
+  .col-md-4
+    .well
+      h4 Actions
+      .form-actions
+        = f.button :submit, class: 'btn btn-primary'
+        - if partner.id
+          = link_to "Supprimer", partner_path(partner), method: :delete,
+                    data: { confirm: "Voulez-vous vraiment supprimer ce partenaire ? Cette opération est irréversible." },
+                    class: 'btn btn-danger btn-left-margin'
+        = link_to "Annuler", partners_path, class: 'btn btn-default btn-left-margin'

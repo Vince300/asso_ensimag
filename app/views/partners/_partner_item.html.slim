@@ -1,0 +1,12 @@
+.col-md-4.img-portfolio
+  = link_to partner.site_url do
+    img.img-responsive.img-hover.center-block src="#{partner.picture}"
+  h3= link_to partner.name, partner.site_url
+  p= partner.description
+  p.faded
+    | Partenaire de #{link_to partner.asso.username, asso_path(partner.asso)}
+    - if policy(partner).edit?
+      = " "
+      = link_to "Modifier", edit_partner_path(partner)
+      = " | "
+      = link_to "Supprimer", partner_path(partner), method: :delete, data: { confirm: 'Voulez-vous vraiment supprimer ce partenaire ?' }
