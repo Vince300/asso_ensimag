@@ -1,5 +1,5 @@
 ActiveAdmin.register Event do
-  permit_params :name, :start_time, :end_time, :location, :description, :facebook_url, :asso
+  permit_params :name, :start_time, :end_time, :location, :description, :facebook_url, :picture, :asso
 
   index do
     selectable_column
@@ -8,6 +8,7 @@ ActiveAdmin.register Event do
     column :asso
     column :start_time
     column :location
+    column :picture
     actions
   end
 
@@ -18,7 +19,7 @@ ActiveAdmin.register Event do
   filter :location
   filter :summary
 
-  form do |f|
+  form(html: { multipart: true }) do |f|
     f.inputs "Event" do
       f.input :name
       f.input :asso
@@ -27,6 +28,7 @@ ActiveAdmin.register Event do
       f.input :location
       f.input :facebook_url
       f.input :description, as: :ckeditor, input_html: { ckeditor: { 'customConfig' => asset_path('ckeditor/config.js') }}
+      f.input :picture, as: :file
     end
     f.actions
   end

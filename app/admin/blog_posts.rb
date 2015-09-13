@@ -1,5 +1,5 @@
 ActiveAdmin.register BlogPost do
-  permit_params :title, :published, :summary, :body, :author
+  permit_params :title, :published, :summary, :body, :author, :picture
 
   index do
     selectable_column
@@ -8,6 +8,7 @@ ActiveAdmin.register BlogPost do
     column :author
     column :published
     column :summary
+    column :picture
     actions
   end
 
@@ -18,13 +19,14 @@ ActiveAdmin.register BlogPost do
   filter :body
   filter :slug
 
-  form do |f|
+  form(html: { multipart: true }) do |f|
     f.inputs "Article" do
       f.input :title
       f.input :author
       f.input :published
       f.input :summary
       f.input :body, as: :ckeditor, input_html: { ckeditor: { 'customConfig' => asset_path('ckeditor/config.js') }}
+      f.input :picture, as: :file
     end
     f.actions
   end

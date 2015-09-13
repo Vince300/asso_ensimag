@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  permit_params :username, :email, :description, :order, :site_url, :facebook_url, :color
+  permit_params :username, :email, :description, :order, :site_url, :facebook_url, :color, :picture
 
   index do
     selectable_column
@@ -32,7 +32,7 @@ ActiveAdmin.register User do
     end
   end
 
-  form do |f|
+  form(html: { multipart: true }) do |f|
     f.inputs "Détails de l'association" do
       f.input :username
       f.input :email
@@ -43,6 +43,7 @@ ActiveAdmin.register User do
       f.input :site_url
       f.input :facebook_url
       f.input :color, as: :string
+      f.input :picture, as: :file
     end
     f.actions
   end
