@@ -1,5 +1,5 @@
 ActiveAdmin.register Event do
-  permit_params :name, :start_time, :end_time, :location, :description, :facebook_url, :picture, :asso
+  permit_params :name, :start_time, :end_time, :location, :description, :facebook_url, :picture, :asso_id
 
   index do
     selectable_column

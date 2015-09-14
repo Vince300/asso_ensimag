@@ -1,5 +1,5 @@
 ActiveAdmin.register Partner do
-  permit_params :name, :site_url, :description, :picture, :asso
+  permit_params :name, :site_url, :description, :picture, :asso_id
 
   index do
     selectable_column

@@ -1,5 +1,5 @@
 ActiveAdmin.register BlogPost do
-  permit_params :title, :published, :summary, :body, :author, :picture
+  permit_params :title, :published, :summary, :body, :author_id, :picture
 
   index do
     selectable_column
