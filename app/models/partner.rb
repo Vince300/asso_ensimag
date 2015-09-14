@@ -5,6 +5,6 @@ class Partner < ActiveRecord::Base
   # Asso picture
   mount_uploader :picture, PartnerPictureUploader
 
-  validates :name, :description, presence: true
+  validates :name, :description, :asso, presence: true
   validates :site_url, url: { message: I18n.t('errors.messages.url') }
 end
