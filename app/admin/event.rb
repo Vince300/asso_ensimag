@@ -1,5 +1,5 @@
 ActiveAdmin.register Event do
-  permit_params :name, :start_time, :end_time, :location, :description, :facebook_url, :picture, :asso_id
+  permit_params :name, :start_time, :end_time, :location, :description, :facebook_url, :picture, :asso_id, :published
 
   index do
     selectable_column
@@ -19,10 +19,34 @@ ActiveAdmin.register Event do
   filter :location
   filter :summary
 
+  controller do
+    def create
+      set_published_date
+      super
+    end
+
+    def update
+      set_published_date
+      super
+    end
+
+    def set_published_date
+      if params[:event]["published(1i)"].blank?
+        d = DateTime.now
+        params[:event]["published(1i)"] = d.year.to_s
+        params[:event]["published(2i)"] = d.month.to_s
+        params[:event]["published(3i)"] = d.day.to_s
+        params[:event]["published(4i)"] = d.hour.to_s
+        params[:event]["published(5i)"] = d.minute.to_s
+      end
+    end
+  end
+
   form(html: { multipart: true }) do |f|
     f.inputs "Event" do
       f.input :name
       f.input :asso
+      f.input :published
       f.input :start_time
       f.input :end_time
       f.input :location
