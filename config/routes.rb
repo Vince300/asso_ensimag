@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get 'asso/:id(/page/:page)' => 'assos#show',   as: :asso
   put 'asso/:id'              => 'assos#update', as: :update_asso
   get 'asso/:id/edit'         => 'assos#edit',   as: :edit_asso
-  get 'asso/:id/detail'       => 'assos#detail', as: :detail_asso
 
   # Asso blog
   resources :blog_posts, path: 'posts'

@@ -6,11 +6,8 @@ class BlogPostsController < ApplicationController
 
   # GET /posts
   def index
-    if user_signed_in?
-      redirect_to asso_path(current_user)
-    else
-      redirect_to root_path
-    end
+    @posts = BlogPost.published(current_user).page(params[:page])
+    @event = Event.coming.take
   end
 
   # GET /posts/:id

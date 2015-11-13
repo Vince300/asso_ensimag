@@ -1,6 +1,6 @@
 .well
   h4 A propos
-  = link_to detail_asso_path(asso) do
+  = link_to asso_path(asso) do
     img.img-responsive.img-hover.center-block src="#{asso.picture.list}"
   p= descriptive_blob(asso)
-  = link_to "En savoir plus", detail_asso_path(asso), class: 'btn btn-default btn-block'
+  = link_to "En savoir plus", asso_path(asso), class: 'btn btn-default btn-block'

@@ -1,0 +1,22 @@
+.well
+  - if event.nil?
+    em Aucun évènement à venir
+  - else
+    h4
+      = event.name
+    .faded
+      p
+        = fa_icon "clock-o"
+        = " "
+        = time_tag event.start_time
+      p
+        = fa_icon "map-marker"
+        = " "
+        = event.location
+      - if event.facebook_url
+        p
+          = fa_icon "facebook-official"
+          = " "
+          = link_to "Page de l'évènement", event.facebook_url
+    p= descriptive_blob(event)
+    = link_to "Plus d'infos", event_path(event), class: 'btn btn-default btn-block'

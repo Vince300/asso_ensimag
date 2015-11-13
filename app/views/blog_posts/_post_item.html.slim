@@ -3,6 +3,8 @@ p
   = fa_icon "clock-o"
   = " Le "
   = time_tag post.published
+  = " par "
+  = link_to post.author.username, asso_path(post.author)
 hr
 = link_to blog_post_path(post) do
   img.img-responsive.img-hover.center-block src="#{post.picture.list}"

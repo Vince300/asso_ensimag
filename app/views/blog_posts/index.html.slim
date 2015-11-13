@@ -1,0 +1,21 @@
+.container
+  .row
+    h1.page-header
+      = title "Blog"
+    ol.breadcrumb
+      li= link_to "Accueil", root_path
+      li.active Blog
+
+  .row
+    .col-md-8
+      - has_seen_posts = false
+      - @posts.each do |post|
+        - has_seen_posts = true
+        = render partial: "blog_posts/post_item", locals: { post: post }
+      - if has_seen_posts
+        = paginate @posts
+      - else
+      .text-center
+        em Aucun article pour l'instant
+    .col-md-4
+      = render partial: "event_block", locals: { event: @event }

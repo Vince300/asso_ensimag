@@ -2,7 +2,7 @@
   .row
     h1.page-header
       = title @asso.username
-      small Blog
+      small A propos
     ol.breadcrumb
       li= link_to "Accueil", root_path
       li= link_to "Associations", assos_path
@@ -10,17 +10,11 @@
 
   .row
     .col-md-8
-      - has_seen_posts = false
-      - @posts.each do |post|
-        - has_seen_posts = true
-        = render partial: "blog_posts/post_item", locals: { post: post }
-      - if has_seen_posts
-        = paginate @posts
-      - else
-        .text-center
-          em Aucun article pour l'instant
+      = link_to @asso.picture.to_s do
+        img.img-responsive.center-block src=@asso.picture
+      hr
+      = rich_safe(@asso.description) or "Cette association n'a pas encore édité sa description."
     .col-md-4
-      = render partial: "action_links", locals: { asso: @asso }
-      = render partial: "event_block", locals: { asso: @asso }
-      = render partial: "about_block", locals: { asso: @asso }
-      = render partial: "social_block", locals: { asso: @asso }
+      = render partial: "event_block", locals: {asso: @asso}
+      = render partial: "action_links", locals: {asso: @asso}
+      = render partial: "social_block", locals: {asso: @asso}

@@ -11,10 +11,6 @@ class AssosController < ApplicationController
     @posts = @asso.posts.published(current_user).page(params[:page])
   end
 
-  # GET /asso/:id/detail
-  def detail
-  end
-
   # GET /asso/:id/edit
   def edit
     authorize_asso
@@ -25,7 +21,7 @@ class AssosController < ApplicationController
     authorize_asso
 
     if @asso.update(asso_params)
-      redirect_to detail_asso_path(@asso), flash: { notice: "Les modifications ont été enregistrées" }
+      redirect_to asso_path(@asso), flash: { notice: "Les modifications ont été enregistrées" }
     else
       render action: 'edit'
     end
