@@ -5,7 +5,7 @@
       small Organisé par #{link_to @event.asso.username, asso_path(@event.asso)}
   ol.breadcrumb
     li= link_to "Accueil", root_path
-    li= link_to "Assos", assos_path
+    li= link_to "Associations", assos_path
     li= link_to @event.asso.username, asso_path(@event.asso)
     li= link_to "Events", asso_events_path(@event.asso)
     li.active= @event.name
