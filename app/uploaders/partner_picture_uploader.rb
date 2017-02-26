@@ -13,7 +13,7 @@ class PartnerPictureUploader < CarrierWave::Uploader::Base
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
-  def default_url
+  def default_url(version_name = nil)
     return ActionController::Base.helpers.asset_path("fallback/asso.png")
   end
 

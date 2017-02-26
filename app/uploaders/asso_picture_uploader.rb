@@ -13,7 +13,7 @@ class AssoPictureUploader < CarrierWave::Uploader::Base
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
-  def default_url
+  def default_url(version_name = nil)
     pth = if version_name == :homepage
             "fallback/homepage_asso.png"
           else

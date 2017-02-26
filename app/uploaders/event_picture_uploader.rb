@@ -13,7 +13,7 @@ class EventPictureUploader < CarrierWave::Uploader::Base
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
-  def default_url
+  def default_url(version_name = nil)
     model.asso.picture_url(version_name)
   end
 
