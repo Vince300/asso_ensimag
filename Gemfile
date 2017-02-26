@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use PostgreSQL in production
-gem 'pg', group: :production
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -22,7 +22,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+if RbConfig::CONFIG['host_os'] =~ /mingw/
+  gem 'bcrypt', '~> 3.1.7', platform: :ruby
+else
+  gem 'bcrypt', '~> 3.1.7'
+end
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -41,7 +45,7 @@ end
 gem 'slim-rails'
 
 # i18n
-gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x'
 gem 'devise-i18n'
 
 # Slug generation
@@ -110,7 +114,7 @@ end
 
 # Test gems
 group :development, :test do
-  gem 'rspec-rails', '~> 3.1.0'
+  gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails', '~> 4.4.1'
 end
 

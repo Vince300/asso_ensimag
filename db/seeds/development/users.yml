@@ -1,7 +1,7 @@
 cercle:
   username: Cercle
   email: cercle@asso-ensimag.fr
-  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, "xxxxxxxxxxxxxxx") %>
   slug: cercle
   order: 0
   site_url: http://ensimag-b.de/
@@ -28,7 +28,7 @@ cercle:
 bds:
   username: BDS
   email: bds@asso-ensimag.fr
-  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, "xxxxxxxxxxxxxxx") %>
   slug: bds
   order: 1
   color: "#008A43"
@@ -39,7 +39,7 @@ bds:
 bda:
   username: BDA
   email: bda@asso-ensimag.fr
-  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, "xxxxxxxxxxxxxxx") %>
   slug: bda
   order: 2
   color: "#006838"
@@ -50,7 +50,7 @@ bda:
 je:
   username: JE
   email: je@asso-ensimag.fr
-  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, "xxxxxxxxxxxxxxx") %>
   slug: je
   order: 3
   color: "#cccccc"
@@ -61,7 +61,7 @@ je:
 polecom:
   username: Pôle com'
   email: polecom@asso-ensimag.fr
-  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, "xxxxxxxxxxxxxxx") %>
   slug: pole-com
   order: 4
   color: "#669933"
@@ -72,7 +72,7 @@ polecom:
 polegala:
   username: Pôle gala
   email: polegala@asso-ensimag.fr
-  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, "xxxxxxxxxxxxxxx") %>
   slug: pole-gala
   order: 5
   color: "#cccccc"
@@ -81,7 +81,7 @@ polegala:
 gaming:
   username: Ensimag gaming
   email: gaming@asso-ensimag.fr
-  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, "xxxxxxxxxxxxxxx") %>
   slug: ensimag-gaming
   order: 6
   color: "#3d3d3d"
@@ -90,7 +90,7 @@ gaming:
 engine:
   username: Club Engine
   email: engine@asso-ensimag.fr
-  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, "xxxxxxxxxxxxxxx") %>
   slug: club-engine
   order: 7
   color: "#cccccc"
@@ -99,7 +99,7 @@ engine:
 securimag:
   username: SecurIMAG
   email: securimag@asso-ensimag.fr
-  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, "xxxxxxxxxxxxxxx") %>
   slug: securimag
   order: 8
   color: "#cccccc"

@@ -1,7 +1,7 @@
 cercle:
   username: Cercle
   email: cercle.ensimag@gmail.com
-  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, "xxxxxxxxxxxxxxx") %>
   order: 0
   facebook_url: https://www.facebook.com/cercle.imag
   color: "#024902"
@@ -9,7 +9,7 @@ cercle:
 bds:
   username: BDS
   email: ensimagbds@gmail.com
-  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxxd") %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, "xxxxxxxxxxxxxxxd") %>
   order: 1
   facebook_url: https://www.facebook.com/bds.ensimag
   color: "#008A43"
@@ -17,7 +17,7 @@ bds:
 bda:
   username: BDA
   email: bda@ensimag.imag.fr
-  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, "xxxxxxxxxxxxxxx") %>
   order: 2
   facebook_url: https://www.facebook.com/bda.ensimag
   color: "#006838"
@@ -25,7 +25,7 @@ bda:
 polecom:
   username: Pôle com'
   email: polecom@asso-ensimag.fr
-  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, "xxxxxxxxxxxxxxx") %>
   order: 3
   facebook_url: https://www.facebook.com/polecom.ensimag
   color: "#669933"
@@ -33,7 +33,7 @@ polecom:
 gaming:
   username: Ensimag gaming
   email: ensimag.gaming@gmail.com
-  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, "xxxxxxxxxxxxxxx") %>
   order: 4
   facebook_url: https://www.facebook.com/profile.php?id=100004149677218
   color: "#3d3d3d"
@@ -41,7 +41,7 @@ gaming:
 je:
   username: Nsigma
   email: nsigma@nsigma.fr
-  encrypted_password: <%= Devise.bcrypt(User, "xxxxxxxxxxxxxxx") %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, "xxxxxxxxxxxxxxx") %>
   order: 5
   facebook_url: https://www.facebook.com/nsigma.ensimag
   color: "#01A300"
