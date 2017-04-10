@@ -28,8 +28,8 @@ else
   gem 'bcrypt', '~> 3.1.7'
 end
 
-# Use unicorn as the app server
-# gem 'unicorn'
+# Use Puma as the app server
+gem 'puma'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

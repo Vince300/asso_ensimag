@@ -201,6 +201,7 @@ GEM
       activerecord (>= 3.0)
     polyglot (0.3.5)
     public_suffix (2.0.5)
+    puma (3.7.1)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     rack (1.5.5)
@@ -344,6 +345,7 @@ DEPENDENCIES
   mini_magick
   momentjs-rails (>= 2.9.0)
   pg
+  puma
   pundit
   rails (= 4.1.4)
   rails-html-sanitizer
