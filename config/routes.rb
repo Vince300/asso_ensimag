@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get    'partners/:id/edit' => 'partners#edit',    as: :edit_partner
 
   # Asso events
-  get 'events/calendar'             => 'events#calendar',    as: :events_calendar
+  get 'events/calendar'              => 'events#calendar',    as: :events_calendar
   get 'asso/:id/events(/page/:page)' => 'events#asso_events', as: :asso_events
   resources :events do
     get 'page/:page', :action => :index, :on => :collection
