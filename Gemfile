@@ -76,7 +76,8 @@ gem 'pundit'
 gem 'bundler'
 
 # Administration interface
-gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin', tag: 'v1.0.0.pre5'
+gem 'formadmin', git: 'https://github.com/formaweb/formadmin', tag: 'v0.1.6'
 
 # form helper
 gem 'simple_form'
