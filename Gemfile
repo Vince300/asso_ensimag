@@ -22,11 +22,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Use ActiveModel has_secure_password
-if RbConfig::CONFIG['host_os'] =~ /mingw/
-  gem 'bcrypt', '~> 3.1.7', platform: :ruby
-else
-  gem 'bcrypt', '~> 3.1.7'
-end
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Puma as the app server
 gem 'puma'
