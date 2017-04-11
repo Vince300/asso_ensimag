@@ -1,0 +1,10 @@
+{
+  "name": "Asso-Ensimag",
+  "description": "Site des associations de Grenoble INP - Ensimag",
+  "repository": "https://github.com/Vince300/asso_ensimag",
+  "scripts": {
+    "dokku": {
+      "predeploy": "bundle exec rake db:migrate"
+    }
+  }
+}
