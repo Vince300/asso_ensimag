@@ -34,7 +34,7 @@ gem 'puma'
 gem 'slim-rails'
 
 # i18n
-gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x'
+gem 'rails-i18n', git: 'https://github.com/svenfuchs/rails-i18n', branch: 'rails-4-x'
 gem 'devise-i18n'
 
 # Slug generation
@@ -67,7 +67,7 @@ gem 'chroma'
 gem "kaminari"
 
 # Authentication
-gem 'devise', github: 'plataformatec/devise'
+gem 'devise', git: 'https://github.com/plataformatec/devise', tag: 'v4.2.1'
 
 # Authorization
 gem 'pundit'
