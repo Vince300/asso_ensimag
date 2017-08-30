@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.4'
 # Use PostgreSQL in production
 gem 'pg'
+# Enable heroku deployment
+gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.3'
 # Use Uglifier as compressor for JavaScript assets
