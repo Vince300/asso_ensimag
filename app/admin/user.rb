@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  permit_params :username, :email, :description, :order, :site_url, :facebook_url, :color, :picture
+  permit_params :username, :email, :description, :order, :site_url, :facebook_url, :color, :picture, :password, :password_confirmation
 
   index do
     selectable_column
