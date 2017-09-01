@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Bienvenue sur <%= @domain %>, <%= @user.username %></h1>
+    <p>
+      Vous recevez cet e-mail car votre association <%= @user.username %> a
+      été inscrite sur le site des associations de l'Ensimag par le Pôle Com'.
+    </p>
+    <p>
+      Le mot de passe qui vous a été assigné est indiqué ci-dessous. Vous pouvez
+      le modifier à tout moment depuis la page &laquo; Mon compte &raquo;.
+    </p>
+    <pre>
+      <%= @user.password %>
+    </pre>
+    <p>
+      Vous pouvez dès maintenant vous connecter à l'adresse <a href="<%= @url %>"><%= @url %></a>
+      afin de remplir les informations au sujet de votre association.
+    </p>
+    <br />
+    <p>Le Pôle Com' Ensimag</p>
+  </body>
+</html>

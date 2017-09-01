@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  permit_params :username, :email, :description, :order, :site_url, :facebook_url, :color, :picture, :password, :password_confirmation
+  permit_params :email, :username, :slug, :description, :order, :site_url, :facebook_url, :color, :picture, :password, :password_confirmation
 
   index do
     selectable_column
@@ -19,6 +19,12 @@ ActiveAdmin.register User do
   filter :current_sign_in_at
 
   controller do
+    after_create do |user|
+      if user.persisted?
+        UserCreateMailer.welcome_email(user).deliver
+      end
+    end
+
     def update
       if params[:user][:password].blank?
         params[:user].delete("password")
