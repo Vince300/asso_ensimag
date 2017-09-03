@@ -11,10 +11,12 @@ class Event < ActiveRecord::Base
   scope :ordered, -> { order(start_time: :desc) }
 
   # Returns only published events
-  scope :published, -> (user = nil) { if user.nil?
-                                        where('published <= ?', DateTime.now)
+  scope :published, -> (user = nil) { q = joins(:asso)
+                                      if user.nil?
+                                        q.where('published <= ? AND users.order IS NOT NULL', DateTime.now)
                                       else
-                                        where('asso_id = :id OR published <= :date', id: user.id, date: DateTime.now)
+                                        q.where('asso_id = :id OR (published <= :date AND users.order IS NOT NULL)',
+                                                id: user.id, date: DateTime.now)
                                       end }
 
   # Relation to users
