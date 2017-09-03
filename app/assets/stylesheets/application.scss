@@ -141,3 +141,7 @@ h1, h2, h3, h4, h5, h6 {
 iframe {
   width: 100% !important;
 }
+
+.turbolinks-progress-bar {
+  background-color: $navbar-inverse-border;
+}
