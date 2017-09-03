@@ -3,7 +3,6 @@ class AssosController < ApplicationController
 
   # GET /assos
   def index
-    @assos = User.all
   end
 
   # GET /asso/:id
