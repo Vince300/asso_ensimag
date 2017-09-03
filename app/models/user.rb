@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   devise authentication_keys: [:login]
 
   # Users should be ordered by the order value
-  scope :ordered, -> { order(:order) }
+  scope :ordered, -> { where.not(users: { order: nil }).order(:order) }
 
   # BlogPost relation
   has_many :posts, class_name: 'BlogPost', foreign_key: 'author_id'
@@ -55,6 +55,6 @@ class User < ActiveRecord::Base
   # Validation attributes
   validates :username, presence: true
   validates :color, color: true
-  validates :order, uniqueness: true
+  validates :order, uniqueness: true, allow_nil: true
   validates :site_url, :facebook_url, url: { allow_nil: true, allow_blank: true, message: I18n.t('errors.messages.url') }
 end
