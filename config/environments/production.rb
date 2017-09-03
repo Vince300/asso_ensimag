@@ -83,5 +83,4 @@ Rails.application.configure do
   Rails.application.routes.default_url_options[:host] = ENV["ASSO_DOMAIN"] || raise("Environment variable ASSO_DOMAIN" +
                                                                                         " must be set to the actual " +
                                                                                         "domain name for mails to work")
-  Rails.application.routes.default_url_options[:secure] = ENV["ASSO_HTTPS"] || false
 end

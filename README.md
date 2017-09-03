@@ -27,8 +27,6 @@ dokku config:set asso_ensimag ASSO_SMTP_PASS=[app password pour adresse.contact@
 dokku config:set asso_ensimag ASSO_SMTP_DOMAIN=gmail.com   # Car gmail utilisé pour les mails de contact
 # Configuration de l'adresse canonique du site 
 dokku config:set asso_ensimag ASSO_DOMAIN=asso-ensimag.com # Ou autre domaine configuré, numéro de port compris
-# Indiquer que HTTPS est utilisé
-dokku config:set asso_ensimag ASSO_HTTPS=1
 
 ### EN LOCAL ###
 # "dokku" est le remote correspondant à l'app sur le serveur
