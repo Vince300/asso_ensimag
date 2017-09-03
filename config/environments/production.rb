@@ -83,4 +83,16 @@ Rails.application.configure do
   Rails.application.routes.default_url_options[:host] = ENV["ASSO_DOMAIN"] || warn("Environment variable ASSO_DOMAIN" +
                                                                                         " must be set to the actual " +
                                                                                         "domain name for mails to work")
+
+  # Use Gmail for sending website email
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address: 'smtp.gmail.com',
+      port: 587,
+      domain: Rails.application.secrets.asso_smtp_domain,
+      user_name: Rails.application.secrets.asso_smtp_login,
+      password: Rails.application.secrets.asso_smtp_pass,
+      authentication: 'login',
+      enable_starttls_auto: true
+  }
 end
