@@ -39,6 +39,11 @@ ActiveAdmin.register User do
   end
 
   form(html: { multipart: true }) do |f|
+    if f.object.new_record? then
+      f.object.order = (User.maximum(:order) + 1) || 1
+      f.object.color = '#CCCCCC'
+    end
+
     f.inputs "Détails de l'association" do
       f.input :username
       f.input :email
