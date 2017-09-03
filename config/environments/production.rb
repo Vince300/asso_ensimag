@@ -80,7 +80,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  Rails.application.routes.default_url_options[:host] = ENV["ASSO_DOMAIN"] || raise("Environment variable ASSO_DOMAIN" +
+  Rails.application.routes.default_url_options[:host] = ENV["ASSO_DOMAIN"] || warn("Environment variable ASSO_DOMAIN" +
                                                                                         " must be set to the actual " +
                                                                                         "domain name for mails to work")
 end
