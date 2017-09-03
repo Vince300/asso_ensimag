@@ -5,4 +5,4 @@ footer
       - unless user_signed_in?
         ul
           li= link_to "Connexion asso", new_user_session_path(redirect_to: URI(request.original_url).path)
-          li= link_to "Connexion admin", admin_root_path
+          li= link_to "Connexion admin", admin_root_path, 'data-turbolinks': false
