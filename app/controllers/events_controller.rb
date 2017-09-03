@@ -84,6 +84,7 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to event_path(@event), notice: "L'évènement a été créé avec succès."
     else
+      @asso = current_user
       render :new
     end
   end
