@@ -35,10 +35,13 @@ nav.navbar.navbar-fixed-top.navbar-inverse role="navigation"
         ul.nav.navbar-nav.navbar-right
           li= link_to asso_path(current_user) do
             span.glyphicon.glyphicon-user
-            |  #{current_user.username}
+            span.navbar-right-nav-item-text
+              |  #{current_user.username}
           li= link_to edit_user_registration_path do
             span.glyphicon.glyphicon-cog
-            |  Compte
+            span.navbar-right-nav-item-text
+              |  Compte
           li= link_to destroy_user_session_path(redirect_to: URI(request.original_url).path), method: :delete do
             span.glyphicon.glyphicon-log-out
-            |  Déconnexion
+            span.navbar-right-nav-item-text
+              |  Déconnexion

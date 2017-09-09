@@ -55,6 +55,12 @@ footer ul {
   .img-related {
     margin-bottom: 30px;
   }
+
+  .navbar-nav > li > a {
+    span.navbar-right-nav-item-text {
+      display: none;
+    }
+  }
 }
 
 @media(max-width:767px) {
@@ -64,6 +70,12 @@ footer ul {
 
   header.carousel .carousel {
     height: 70%;
+  }
+
+  .navbar-nav > li > a {
+    span.navbar-right-nav-item-text {
+      display: inline;
+    }
   }
 }
 
