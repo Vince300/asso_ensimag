@@ -24,7 +24,7 @@
 
   <% if policy(Partner).new? %>
     <div class="row">
-      <%= link_to "Nouveau partenaire", new_partner_path, class: "btn btn-block btn-primary btn-lg" %>
+      <%= link_to "Nouveau partenaire", new_partner_path, class: "btn btn-block btn-primary btn-lg", 'data-turbolinks' => false %>
     </div>
   <% end %>
   </div>
