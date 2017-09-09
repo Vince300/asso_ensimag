@@ -30,6 +30,7 @@ class PartnersController < ApplicationController
     authorize_partner
 
     if @partner.save
+      expire_fragment(:navbar_partner_link)
       redirect_to partners_url, notice: 'Le partenaire a été créé avec succès.'
     else
       render :new
@@ -54,6 +55,7 @@ class PartnersController < ApplicationController
     authorize_partner
 
     @partner.destroy
+    expire_fragment(:navbar_partner_link)
     redirect_to partners_url, notice: 'Le partenaire a été supprimé.'
   end
 

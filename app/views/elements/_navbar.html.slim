@@ -15,13 +15,18 @@ nav.navbar.navbar-fixed-top.navbar-inverse role="navigation"
       ul.nav.navbar-nav
         li= link_to "Blog", blog_posts_path
         li= link_to "Events", events_path
-        li= link_to "Partenaires", partners_path
+        - if current_user
+          li= link_to "Partenaires", partners_path
+        - else
+          - cache(:navbar_partner_link) do
+            - if any_partners
+              li= link_to "Partenaires", partners_path
         li.dropdown
           a.dropdown-toggle data-toggle="dropdown" href="#"
             | Les assos
             b.caret
           ul.dropdown-menu
-            - cache('navbar_asso_list') do
+            - cache(:navbar_asso_list) do
               - all_assos.each do |asso|
                 li= link_to asso.username, asso_path(asso)
             li.divider

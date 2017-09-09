@@ -3,6 +3,10 @@ module ApplicationHelper
     User.ordered
   end
 
+  def any_partners
+    Partner.any?
+  end
+
   def sanitizer
     Rails::Html::WhiteListSanitizer.new
   end

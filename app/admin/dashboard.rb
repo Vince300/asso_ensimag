@@ -6,7 +6,10 @@ ActiveAdmin.register_page "Dashboard" do
     end
   end
 
-  clear_cache_action(:clear_navbar_cache, 'navbar_asso_list', "Cache de la barre de navigation")
+  clear_cache_action(:clear_navbar_cache, :navbar_asso_list,
+                     "Cache de la barre de navigation")
+  clear_cache_action(:clear_navbar_partner_cache, :navbar_partner_link,
+                     "Cache des partenaires dans la barre de navigation")
 
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
