@@ -1,0 +1,12 @@
+.container
+  .row
+    h1.page-header= title "Les associations de l'Ensimag"
+    ol.breadcrumb
+      li= link_to "Accueil", root_path
+      li.active Associations
+
+  .row
+    - all_assos.each_with_index.each do |asso, i|
+      = render partial: "asso_item", locals: { asso: asso }
+      - if ((i + 1) % 3) == 0
+        .clearfix
