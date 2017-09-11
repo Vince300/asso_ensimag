@@ -34,7 +34,7 @@
               = link_to "Page de l'évènement", @event.facebook_url
         - if can_edit(@event)
           h4 Actions
-          = link_to "Modifier l'event", edit_event_path(@event), class: 'btn btn-primary btn-block', 'data-turbolinks': false
+          = link_to "Modifier l'event", edit_event_path(@event), class: 'btn btn-primary btn-block'
       = render partial: "assos/social_block", locals: { asso: @event.asso }
       = render partial: "assos/about_block", locals: { asso: @event.asso }
     .col-lg-8
